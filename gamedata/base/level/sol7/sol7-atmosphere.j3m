@@ -1,0 +1,23 @@
+Material My Material : Common/MatDefs/Light/Lighting.j3md {
+     MaterialParameters {
+        Minnaert : true
+        Diffuse : 0.4 0.4 1 0.5
+        UseMaterialColors : true
+        EnvMapAsSphereMap : false
+        PackedNormalParallax : false
+        LowQuality : false
+        UseAlpha : true
+        GlowColor : 0 0 0 0
+        LATC : false
+        SeparateTexCoord : false
+        HardwareShadows : true
+        FilterMode : 0
+     }
+    AdditionalRenderState {
+      ColorWrite On
+      DepthTest On
+      DepthWrite On
+      AlphaTestFalloff 0.0
+      Blend AlphaAdditive
+    }
+}

@@ -1,0 +1,15 @@
+Material MyMaterial : Common/MatDefs/Light/Lighting.j3md {
+    MaterialParameters {
+        ParallaxHeight : 0.05
+        Shininess : 128.0
+        SpecularMap : Flip objects/laserturret/base_s.png
+        DiffuseMap : Flip objects/laserturret/base_d.png
+        UseMaterialColors : true
+        Specular : 1.0 1.0 1.0 1.0
+        Diffuse : 1.0 1.0 1.0 1.0
+        Ambient : 0.8 0.8 0.8 1.0
+    }
+    AdditionalRenderState {
+
+    }
+}

@@ -1,0 +1,31 @@
+Material MyMaterial : Common/MatDefs/Light/Lighting.j3md {
+    MaterialParameters {
+        HighQuality : false
+        VTangent : false
+        LATC : false
+        UseAlpha : false
+        VertexLighting : false
+        Minnaert : false
+        UseVertexColor : false
+        SteepParallax : false
+        UseMaterialColors : false
+        PackedNormalParallax : false
+        LowQuality : false
+        HardwareShadows : true
+        WardIso : false
+        DiffuseMap : Flip level/sol7/earth_clouds.png
+        Shininess : 0.1
+        AlphaMap : Flip level/sol7/earth_clouds.png
+    }
+    AdditionalRenderState {
+      FaceCull Back
+      Wireframe Off
+      DepthWrite On
+      PolyOffset 0.0 0.0
+      AlphaTestFalloff 0.0
+      Blend Additive
+      PointSprite Off
+      ColorWrite On
+      DepthTest On
+    }
+}

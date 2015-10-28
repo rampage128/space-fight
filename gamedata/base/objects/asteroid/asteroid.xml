@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : turret.xml.xml
+    Created on : 29. Mai 2012, 14:35
+    Author     : rampage
+    Description:
+        Purpose of the document follows.
+-->
+
+<object>
+    <type>asteroid</type>
+    <model>asteroid.j3o</model>
+    <controls>
+        <damage>
+            <hull_hp>800</hull_hp>
+            <deatheffect>stonedust</deatheffect>
+        </damage>
+        <physics>
+            <type>rigidbody</type>
+            <mass>80000</mass>
+        </physics>
+    </controls>
+</object>

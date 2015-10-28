@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : jousting.xml
+    Created on : 23. April 2012, 18:49
+    Author     : rampage
+    Description:
+        First mission file describing a Mission where two destroyers are closing in
+        on each other supported by bombers, fighters and interceptors.
+-->
+
+<mission>
+    <name>Jousting</name>
+    <level>sol7</level>
+    <script>mission.js</script>
+    <factions>
+        <faction>
+            <id>1</id>
+            <name>Dark Knights</name>
+            <color>[1, 0, 0, 1]</color>
+            <flights>
+                <flight>
+                    <id>fleet_1</id>
+                    <type>object</type>
+                    <objects>
+                        <object>
+                            <id>destroyer_1</id>
+                            <type>rscd-tetsubo</type>
+                        </object>
+                    </objects>
+                    <spawn>
+                        <position>[2000.0, 0.0, 20000.0]</position>
+                        <facing>[2000.0, 0.0, 0.0]</facing>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>move</type>
+                            <position>[2000.0, 0.0, 0.0]</position>
+                        </task>
+                    </tasks>
+                </flight>
+                <flight>
+                    <id>bombers_1</id>
+                    <type>client</type>
+                    <name>Intimidator</name>
+                    <defaultship>rapier</defaultship>
+                    <formation>line</formation>
+                    <spawn>
+                        <object>destroyer_1</object>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>attack</type>
+                            <flight>fleet_2</flight>
+                        </task>
+                        <task>
+                            <type>guard</type>
+                            <flight>fleet_1</flight>
+                        </task>
+                    </tasks>
+                </flight>              
+                <flight>
+                    <id>fighters_1</id>
+                    <type>client</type>
+                    <name>Grailkeeper</name>
+                    <defaultship>predator</defaultship>
+                    <formation>echelon</formation>
+                    <spawn>
+                        <object>destroyer_1</object>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>guard</type>
+                            <object>destroyer_1</object>
+                        </task>
+                    </tasks>
+                </flight>
+                <flight>
+                    <id>interceptors_1</id>
+                    <type>client</type>
+                    <name>Guardian</name>
+                    <defaultship>test</defaultship>
+                    <formation>echelon</formation>
+                    <spawn>
+                        <object>destroyer_1</object>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>guard</type>
+                            <flight>bombers_1</flight>
+                        </task>
+                    </tasks>
+                </flight>
+            </flights>
+        </faction>
+        
+        <faction>
+            <id>2</id>
+            <name>Lords</name>
+            <color>[0, 1, 0, 1]</color>
+            <flights>
+                <flight>
+                    <id>fleet_2</id>
+                    <type>object</type>
+                    <objects>
+                        <object>
+                            <id>destroyer_2</id>
+                            <type>destroyer</type>
+                        </object>
+                    </objects>
+                    <spawn>
+                        <position>[-2000.0, 0.0, -20000.0]</position>
+                        <facing>[-2000.0, 0.0, 0.0]</facing>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>move</type>
+                            <position>[-2000.0, 0.0, 0.0]</position>
+                        </task>
+                    </tasks>
+                </flight>
+                <flight>
+                    <id>bombers_2</id>
+                    <type>client</type>
+                    <name>Spearhead</name>
+                    <defaultship>rapier</defaultship>
+                    <formation>line</formation>
+                    <spawn>
+                        <object>destroyer_2</object>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>attack</type>
+                            <flight>fleet_1</flight>
+                        </task>
+                        <task>
+                            <type>guard</type>
+                            <flight>fleet_2</flight>
+                        </task>
+                    </tasks>
+                </flight>
+                <flight>
+                    <id>fighters_2</id>
+                    <type>client</type>
+                    <name>Spearshaft</name>
+                    <formation>echelon</formation>
+                    <defaultship>test</defaultship>
+                    <spawn>
+                        <object>destroyer_2</object>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>guard</type>
+                            <flight>bombers_2</flight>
+                        </task>
+                    </tasks>
+                </flight>
+                <flight>
+                    <id>interceptors_2</id>
+                    <type>client</type>
+                    <name>Treasureguard</name>
+                    <defaultship>predator</defaultship>
+                    <formation>echelon</formation>
+                    <spawn>
+                        <object>destroyer_2</object>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>guard</type>
+                            <object>destroyer_2</object>
+                        </task>
+                    </tasks>
+                </flight>
+            </flights>
+        </faction>
+        
+    </factions>
+</mission>

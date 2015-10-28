@@ -1,0 +1,30 @@
+Material MyMaterial : Common/MatDefs/Light/Lighting.j3md {
+    MaterialParameters {
+        NormalMap : Flip level/sol7/earth_n.jpg
+        DiffuseMap : Flip level/sol7/earth.png
+        SpecularMap : Flip level/sol7/earth_s.jpg
+        UseMaterialColors : false
+        Shininess : 0.0
+        Minnaert : false
+        VertexLighting : false
+        UseAlpha : false
+        LATC : false
+        HighQuality : false
+        VTangent : false
+        HardwareShadows : true
+        WardIso : false
+        GlowMap : Flip level/sol7/earth_g.jpg
+        ShadowIntensity : 100.0
+    }
+    AdditionalRenderState {
+      FaceCull Back
+      Wireframe Off
+      DepthWrite On
+      PolyOffset 0.0 0.0
+      AlphaTestFalloff 0.0
+      Blend Off
+      PointSprite Off
+      ColorWrite On
+      DepthTest On
+    }
+}

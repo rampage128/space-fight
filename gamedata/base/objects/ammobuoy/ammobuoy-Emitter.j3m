@@ -1,0 +1,20 @@
+Material MyMaterial : Common/MatDefs/Misc/Particle.j3md {
+    MaterialParameters {
+        Quadratic : 668.7371
+        GlowMap : effects/flare.png
+        Texture : effects/flare.png
+        GlowColor : 1.0 0 0 1.0
+        PointSprite : false
+    }
+    AdditionalRenderState {
+      FaceCull Back
+      Wireframe Off
+      DepthWrite On
+      PolyOffset 0.0 0.0
+      AlphaTestFalloff 0.0
+      Blend Additive
+      PointSprite On
+      ColorWrite On
+      DepthTest On
+    }
+}

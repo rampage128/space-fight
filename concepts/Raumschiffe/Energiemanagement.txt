@@ -1,0 +1,28 @@
+Energiemanagement
+
+Jedes Spielergesteuerte Schiff besitzt ein Energiemanagement.
+Dies erlaubt dem Spieler die vorhandene Hauptenergie auf wichtige Komponenten 
+des Systems zu verteilen.
+
+Zu Anfang besitzt jede Komponente 50% Energie. So sind alle Komponenten 
+ausgeglichen. Im Spiel kann der Spieler jederzeit die vorhandene Energie auf die 
+einzelnen Komponenten verteilen.
+
+Komponenten
+- Triebwerk: Leistung des Triebwerks
+- Schilde: Schildstärke
+- Waffen: Aufladerate der Energiewaffen
+- AUX: Aufladerate des Perks
+
+Nicht verteilte Energie wird automatisch auf das Triebwerk verteilt. 
+Überschüssige Energie auf die Schilde.
+
+Schilde: Front- und Heck-Schild können ebenfalls verwaltet werden. Dabei wird 
+die Gesamtenergie die die Schilde erhalten unterteilt.
+
+Überladung: Systeme können für kurze Zeit überladen werden, um sie in wichtigen 
+Situationen drastisch zu verstärken.
+
+Triebwerk: Das Triebwerk kann nicht überladen werden. Es erhält einen 
+"Cruise Modus" in dem es konstant überladen wird. Dafür sind alle anderen 
+Systeme heruntergefahren. Dies dient zur schnellen Reise über lange Distanzen.

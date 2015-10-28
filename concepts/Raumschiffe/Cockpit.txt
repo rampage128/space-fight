@@ -1,0 +1,12 @@
+Cockpit
+
+Status (Siehe "Cockpit status.jpg")
+1. Top-Down Ansicht des Models (Nur Kanten) mit 
+farbiger Statusanzeige
+- a: Status Waffen
+- b: Status Rumpf
+- c: Status Triebwerk
+2. Front-Schilde mit farbiger Statusanzeige sowie Ladungsanzeige (Leer = inaktiv, Voll = Aktiv)
+- a: Hauptschild
+- b: Sekundärschild (Aktiv bei Zufuhr von mehr Energie) 
+3. Heck-Schilde (wie 2.)

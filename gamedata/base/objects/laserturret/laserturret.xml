@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : turret.xml.xml
+    Created on : 29. Mai 2012, 14:35
+    Author     : rampage
+    Description:
+        Purpose of the document follows.
+-->
+
+<object>
+    <type>turret</type>
+    <model>laserturret.j3o</model>
+    <controls>
+        <damage>
+            <hull_hp>1000</hull_hp>
+            <deatheffect>explosion</deatheffect>
+            <effects>
+                <weapon>
+                    <file>hullhit</file>
+                </weapon>
+            </effects>
+        </damage>
+        <physics>
+            <type>rigidbody</type>
+            <mass>10000</mass>
+        </physics>
+        <weapons>
+            <slots>
+                <slot>
+                    <type>primary</type>
+                    <size>2</size>
+                    <defaultweapon>laser</defaultweapon>
+                    <parent>sleeve</parent>
+                    <position>[1.88, 0.62, 4.3]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+                <slot>
+                    <type>primary</type>
+                    <size>2</size>
+                    <defaultweapon>laser</defaultweapon>
+                    <parent>sleeve</parent>
+                    <position>[-1.88, -0.62, 4.3]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+                <slot>
+                    <type>primary</type>
+                    <size>2</size>
+                    <defaultweapon>laser</defaultweapon>
+                    <parent>sleeve</parent>
+                    <position>[1.88, -0.62, 4.3]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+                <slot>
+                    <type>primary</type>
+                    <size>2</size>
+                    <defaultweapon>laser</defaultweapon>
+                    <parent>sleeve</parent>
+                    <position>[-1.88, 0.62, 4.3]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+            </slots>
+        </weapons>
+        <turret>
+            <angle>180f</angle>
+        </turret>
+    </controls>
+</object>

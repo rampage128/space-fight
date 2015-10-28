@@ -1,0 +1,14 @@
+Material MyMaterial : Common/MatDefs/Light/Lighting.j3md {
+    MaterialParameters {
+        Shininess : 128.0
+        NormalMap : Flip ships/predator/cockpit_n.png
+        DiffuseMap : Flip ships/predator/cockpit_d.png
+        UseMaterialColors : true
+        Diffuse : 1.0 1.0 1.0 1.0
+        Specular : 1.0 1.0 1.0 1.0
+        Ambient : 1.0 1.0 1.0 1.0
+    }
+    AdditionalRenderState {
+
+    }
+}

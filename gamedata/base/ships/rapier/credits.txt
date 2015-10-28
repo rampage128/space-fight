@@ -1,0 +1,17 @@
+Future Fighterjet v2.0
+2011-01-15
+----------------------
+
+This model and its skin are licensed under GNU GPL 2 or later.
+
+They were created for use in UFO: Alien Invasion.
+
+Credits:
+--------
+
+Julius - Came up with the original concept and posted a low-poly version on OpenGameArt.org here: http://opengameart.org/content/future-fighterjet
+
+Origin - Rebuilt the model for proper normalmap baking, unwrapped the model and took care of the basic texture.
+
+H-Hour - Came in at the end and added a bit of color and a few final touches to the texture.
+

@@ -1,0 +1,14 @@
+Material MyMaterial : Common/MatDefs/Light/Lighting.j3md {
+     MaterialParameters {
+        DiffuseMap : Flip objects/destroyer/destroyer.png
+        SpecularMap : Flip ships/predator/body_s.png
+        Specular : 1.0 1.0 1.0 1.0
+        Diffuse : 1.0 1.0 1.0 1.0
+        Ambient : 0.8 0.8 0.8 1.0
+        UseMaterialColors : true
+        Shininess : 128.0
+    }
+    AdditionalRenderState {
+
+    }
+}

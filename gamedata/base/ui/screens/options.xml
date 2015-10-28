@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+    <useStyles filename="nifty-default-styles.xml" />
+    <useStyles filename="ui/styles/fonts.xml" />
+    <useStyles filename="ui/styles/styles.xml" />    
+    <useControls filename="nifty-default-controls.xml" />
+    <useControls filename="ui/controls/controls.xml" />
+        
+    <!-- /////////////////////////////////////////////////////////////////// -->
+    <!-- // OPTIONS SCREEN ///////////////////////////////////////////////// -->
+    <!-- /////////////////////////////////////////////////////////////////// -->
+    <screen id="options" controller="de.jlab.spacefight.ui.screens.Options">
+        <layer id="controls" childLayout="vertical">
+            <panel height="40px" width="50%" childLayout="horizontal" align="center" padding="4px,0px,4px,0px">
+                <effect>
+                    <onStartScreen name="move" mode="in" direction="bottom" length="300" startDelay="0" inherit="true"/>
+                    <onEndScreen name="move" mode="out" direction="bottom" length="300" startDelay="0" inherit="true"/>
+                </effect>
+                <panel height="32px" width="100%" childLayout="center" style="sf-panel">
+                    <control name="label" align="left" text="Options" />
+                </panel>
+            </panel>
+            <panel height="36px" width="50%" childLayout="horizontal" align="center" padding="0px,0px,4px,0px">
+                <effect>
+                    <onStartScreen name="fade" start="#00" end="#ff" length="300" startDelay="300" inherit="true"/>
+                    <onEndScreen name="fade" start="#ff" end="#00" length="300" startDelay="0" inherit="true"/>
+                </effect>      
+                <panel height="100%" width="*" childLayout="center" padding="0px,2px,0px,0px">
+                    <control name="button" label="Pilot" id="button_pilot" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="showPilot()"/>
+                    </control>
+                </panel>
+                <panel height="100%" width="*" childLayout="center" padding="0px,2px,0px,2px">
+                    <control name="button" label="Controls" id="button_controls" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="showControls()"/>
+                    </control>
+                </panel>
+                <panel height="100%" width="*" childLayout="center" padding="0px,2px,0px,2px">
+                    <control name="button" label="Video" id="button_video" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="showVideo()"/>
+                    </control>
+                </panel>
+                <panel height="100%" width="*" childLayout="center" padding="0px,0px,0px,2px">
+                    <control name="button" label="Audio" id="button_audio" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="showAudio()"/>
+                    </control>
+                </panel>
+            </panel>
+            <panel height="*" width="50%" childLayout="overlay" align="center">
+                <effect>
+                    <onStartScreen name="fade" start="#00" end="#ff" length="300" startDelay="300" inherit="true"/>
+                    <onEndScreen name="fade" start="#ff" end="#00" length="300" startDelay="0" inherit="true"/>
+                </effect> 
+                
+                <panel width="100%" height="100%" id="tab_pilot" childLayout="vertical">
+                    <panel height="*" style="sf-panel" childLayout="vertical">
+                        <control name="label" text="Profile" align="left" />
+                        <panel height="4px" />
+                        <panel childLayout="horizontal">
+                            <panel childLayout="center" width="25%">
+                                <control name="label" text="Name" align="left" />
+                            </panel>
+                            <control name="textfield" id="pilot_name" value="Player" width="75%" />
+                        </panel>
+                    </panel>
+                    <panel height="4px" />
+                    <panel height="*" style="sf-panel" childLayout="vertical">
+                        <control name="label" text="Statistics" align="left" />
+                        <panel height="4px" />
+                        <!-- STATISTICS -->
+                    </panel>
+                </panel>
+                <panel width="100%" height="100%" id="tab_controls" visible="false" childLayout="vertical">
+                    <panel style="sf-panel" childLayout="vertical">
+                        <control name="label" text="Controltype" align="left" />
+                        <panel height="4px" />
+                        <control id="controls_type" name="dropDown" width="*" />
+                        <!-- CONTROL TYPES (SHIP CONTROLS / CAMERA CONTROLS / COMMUNICATION / SYSTEM CONTROLS) -->
+                    </panel>
+                    <panel height="4px" />
+                    <panel width="100%" height="*" style="sf-panel" childLayout="vertical">
+                        <control name="label" text="Bindings" align="left" />
+                        <panel height="4px" />
+                        <control id="controls_bindinglist" name="advanced-list" width="100%" height="*" />
+                        <!-- SECONDARY WEAPONSLOTS FOR WEAPONSELECTION -->
+                    </panel>
+                </panel>
+                <panel width="100%" height="100%" id="tab_video" childLayout="vertical">
+                    <panel height="*" style="sf-panel" childLayout="vertical">
+                        <control name="label" text="Video Details" align="left" />
+                        <panel height="4px" />
+                        <panel childLayout="horizontal">
+                            <panel childLayout="center" width="25%">
+                                <control name="label" text="Shadows" align="left" />
+                            </panel>
+                            <control id="video_shadow_quality" name="dropDown" width="*" />
+                        </panel>
+                        <panel height="4px" />
+                        <panel childLayout="horizontal">
+                            <panel childLayout="center" width="25%">
+                                <control name="label" text="SSAO" align="left" />
+                            </panel>
+                            <control id="video_ssao_quality" name="dropDown" width="*" />
+                        </panel>
+                        <panel height="4px" />
+                        <panel childLayout="horizontal">
+                            <panel childLayout="center" width="25%">
+                                <control name="label" text="FXAA" align="left" />
+                            </panel>
+                            <control id="video_fxaa_quality" name="dropDown" width="*" />
+                        </panel>
+                        <panel height="4px" />
+                        <panel childLayout="horizontal">
+                            <panel childLayout="center" width="25%">
+                                <control name="label" text="Gamma" align="left" />
+                            </panel>
+                            <control id="video_gamma" name="horizontalSlider" width="*" min="0.25" max="4" initial="1" stepSize="0.25" buttonStepSize="0.25" />
+                        </panel>
+                    </panel>
+                </panel>
+                <panel width="100%" height="100%" id="tab_audio" visible="false" childLayout="vertical">
+                    <panel style="sf-panel" childLayout="vertical">
+                        <control name="label" text="Volume" align="left" />
+                        <panel height="4px" />
+                        <panel childLayout="horizontal">
+                            <panel childLayout="center" width="25%">
+                                <control name="label" text="Master" align="left" />
+                            </panel>
+                            <control id="audio_master" name="horizontalSlider" width="*" min="0" max="1" initial="1" stepSize="0.1" buttonStepSize="0.2" />
+                        </panel>
+                        <panel height="8px" />
+                        <panel childLayout="horizontal">
+                            <panel childLayout="center" width="25%">
+                                <control name="label" text="Effects" align="left" />
+                            </panel>
+                            <control id="audio_effects" name="horizontalSlider" width="*" min="0" max="1" initial="1" stepSize="0.1" buttonStepSize="0.2" />
+                        </panel>
+                        <panel height="4px" />
+                        <panel childLayout="horizontal">
+                            <panel childLayout="center" width="25%">
+                                <control name="label" text="Music" align="left" />
+                            </panel>
+                            <control id="audio_music" name="horizontalSlider" width="*" min="0" max="1" initial="1" stepSize="0.1" buttonStepSize="0.2" />
+                        </panel>
+                        <panel height="4px" />
+                        <panel childLayout="horizontal">
+                            <panel childLayout="center" width="25%">
+                                <control name="label" text="Speech" align="left" />
+                            </panel>
+                            <control id="audio_speech" name="horizontalSlider" width="*" min="0" max="1" initial="1" stepSize="0.1" buttonStepSize="0.2" />
+                        </panel>
+                        <panel height="4px" />
+                        <panel childLayout="horizontal">
+                            <panel childLayout="center" width="25%">
+                                <control name="label" text="Ship Systems" align="left" />
+                            </panel>
+                            <control enabled="false" id="audio_systems" name="horizontalSlider" width="*" min="0" max="1" initial="1" stepSize="0.1" buttonStepSize="0.2" />
+                        </panel>
+                    </panel>
+                    <panel height="4px" />
+                    <panel height="*" style="sf-panel" childLayout="vertical">
+                        <control name="label" text="Options" align="left" />
+                        <panel height="4px" />
+                        <panel childLayout="horizontal">
+                            <panel childLayout="center" width="25%">
+                                <control name="label" text="Listener" align="left" />
+                            </panel>
+                            <control id="audio_listener" name="dropDown" width="*" />
+                        </panel>
+                    </panel>
+                </panel>
+            </panel>
+            <panel height="40px" width="50%" childLayout="horizontal" align="center" padding="4px,0px,4px,0px">
+                <effect>
+                    <onStartScreen name="move" mode="in" direction="bottom" length="300" startDelay="0" inherit="true"/>
+                    <onEndScreen name="move" mode="out" direction="bottom" length="300" startDelay="0" inherit="true"/>
+                </effect>
+                <panel height="100%" width="*" childLayout="center" padding="0px,2px,0px,0px">
+                    <control name="button" label="Cancel" id="backbutton" style="secondarybutton" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="cancel()"/>
+                    </control>
+                </panel>
+                <panel height="100%" width="*" padding="0px,2px,0px,2px" />
+                <panel height="100%" width="*" padding="0px,2px,0px,2px" />
+                <panel height="100%" width="*" childLayout="center" padding="0px,0px,0px,2px">
+                    <control name="button" label="Apply" id="deploybutton" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="apply()"/>
+                    </control>
+                </panel>
+            </panel>
+        </layer>
+    </screen>
+    
+</nifty>

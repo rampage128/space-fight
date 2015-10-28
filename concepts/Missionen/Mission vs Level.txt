@@ -1,0 +1,9 @@
+Level vs Mission
+
+Level sind grundlegende Spielumgebungen. Sie bestehen aus einer Skybox/sphere 
+und einer Szene mit platzierten Objekten.
+
+Missionen sind Szenen mit platzierten Objekten, einem logischen Ablauf und 
+Zielen. Siegbedingungen und Ereignisse werden über ein Skript gesteuert. 
+Außerdem verwendet jede Mission ein Level als Grundlage. Die Szene aus dem Level 
+wird dabei als unveränderliches "Master" verwendet.

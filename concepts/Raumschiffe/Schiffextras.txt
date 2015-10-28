@@ -1,0 +1,17 @@
+Schiffextras
+
+Jedes Spielerschiff besitzt einen AUX-Anschluss, in dem ein Extra untergebracht werden kann. Das Extra muss vor Missionsbeginn gewählt werden.
+
+Allgemeine Extras
+- Traktorstrahl: Hält Ziel fest / Schleppt deaktivierte Schiffe
+- EM-Strahl: Reduziert Gesamtenergie des Ziels
+- EMP: Deaktiviert Schiffe in geringem Umkreis kurz (Matrix)
+- ECM: Störsender lässt Radarpunkt flackern und unterbricht Aufschaltung 
+  rythmisch (Angreifer erhält automatisch ein anderes Ziel in Sicht)
+- Tarnfeld: Macht das Schiff für kurze Zeit unsichtbar
+- Implusionstorpedo: Fliegt geradeaus und erzeugt eine Implusion, die erst alle 
+  Schiffe im Umkreis anzieht und kollidieren lässt und dann mit extremer Kraft 
+  wieder abstößt. Wirkt nur bei Objekten bis zu einer Masse X.
+
+Nur für Bomber
+- Geschütz: Automatisches Heck-Geschütz für Bomber.

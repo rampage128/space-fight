@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : laser.xml.xml
+    Created on : 29. Mai 2012, 15:13
+    Author     : rampage
+    Description:
+        Description file for weapon.
+-->
+
+<weapon>
+    <name>Swarm Missile</name>
+    <type>warhead</type>
+    <script>swarmmissile.js</script>
+    <model>missile.j3o</model>
+    <damage>100</damage>
+    <range>5000</range>
+    <speed>250</speed>
+    <size>3</size>
+    <turnrate>1.5f</turnrate>
+    <collisionradius>2f</collisionradius>
+    <muzzle>
+        <effect>missilemuzzle</effect>
+        <size>1</size>
+    </muzzle>
+    <blast>
+        <impulse>1000000</impulse>
+        <effect>explosion</effect>
+        <size>4</size>
+    </blast>
+    <engines>
+        <engine>
+            <node>engine1</node>
+            <width>3</width>
+            <lifetime>1</lifetime>
+            <material>effects/trail.j3m</material>
+            <sound>
+                <file>engine.ogg</file>
+                <volume>0.5</volume>
+                <maxdistance>300</maxdistance>
+                <refdistance>50</refdistance>
+            </sound>
+        </engine>
+    </engines>
+</weapon>

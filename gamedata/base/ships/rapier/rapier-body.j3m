@@ -1,0 +1,14 @@
+Material MyMaterial : Common/MatDefs/Light/Lighting.j3md {
+    MaterialParameters {
+        NormalMap : Flip ships/rapier/body_n.png
+        DiffuseMap : Flip ships/rapier/body_d.png
+        Specular : 1.0 1.0 1.0 1.0
+        Diffuse : 1.0 1.0 1.0 1.0
+        Ambient : 0.8 0.8 0.8 1.0
+        UseMaterialColors : true
+        Shininess : 128.0
+    }
+    AdditionalRenderState {
+
+    }
+}

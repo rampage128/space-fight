@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : jousting.xml
+    Created on : 23. April 2012, 18:49
+    Author     : rampage
+    Description:
+        First mission file describing a Mission where two destroyers are closing in
+        on each other supported by bombers, fighters and interceptors.
+-->
+
+<mission>
+    <name>Test Assassination</name>
+    <level>test2</level>
+    <factions>
+        <faction>
+            <id>1</id>
+            <name>Assassins</name>
+            <flights>
+                <flight>
+                    <id>bombers_1</id>
+                    <type>client</type>
+                    <name>echelon</name>
+                    <defaultship>rapier</defaultship>
+                    <formation>echelon</formation>
+                    <spawn>
+                        <position>[10000.0, 0.0, 0.0]</position>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>attack</type>
+                            <flight>targets</flight>
+                        </task>
+                    </tasks>
+                </flight>
+            </flights>
+        </faction>
+        <faction>
+            <id>2</id>
+            <name>Targets</name>
+            <flights>
+                <flight>
+                    <id>targets</id>
+                    <type>object</type>
+                    <formation>line</formation>
+                    <objects>
+                        <object>
+                            <id>destroyer_1</id>
+                            <type>destroyer</type>
+                        </object>
+                        <object>
+                            <id>destroyer_2</id>
+                            <type>destroyer</type>
+                        </object>
+                    </objects>
+                    <spawn>
+                        <position>[-2000.0, 0.0, -10000.0]</position>
+                        <facing>[-2000.0, 0.0, 0.0]</facing>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>move</type>
+                            <position>[-2000.0, 0.0, 10000.0]</position>
+                        </task>
+                    </tasks>
+                </flight>
+            </flights>
+       </faction>
+    </factions>
+</mission>

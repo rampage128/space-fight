@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : ecm.xml
+    Created on : 29. Mai 2012, 15:13
+    Author     : rampage
+    Description:
+        Description file for perk.
+-->
+
+<perk>
+    <name>ECM</name>
+    <type>continuous</type>
+    <script>ecm.js</script>
+    <runtime>20</runtime>
+    <loadtime>40</loadtime>
+    <cooldown>10</cooldown>
+    <properties>
+        <period>1</period>
+        <range>500</range>
+    </properties>
+</perk>

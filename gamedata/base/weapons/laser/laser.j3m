@@ -1,0 +1,17 @@
+Material My Material : Common/MatDefs/Misc/Unshaded.j3md {
+     MaterialParameters {
+        GlowMap : Flip weapons/laser/laser.png
+        SeparateTexCoord : false
+        VertexColor : false
+        Color : 1.0 0 0 1.0
+        ColorMap : Flip weapons/laser/laser.png
+     }
+    AdditionalRenderState {
+      Blend Additive
+      PointSprite Off
+      ColorWrite On
+      DepthTest On
+      DepthWrite On
+      FaceCull Back
+    }
+}

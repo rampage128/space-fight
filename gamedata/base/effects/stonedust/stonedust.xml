@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : explosion.xml
+    Created on : 29. Mai 2012, 14:46
+    Author     : rampage
+    Description:
+        Description of explosion effect.
+-->
+
+<effect>
+    <type>once</type>
+    <model>stonedust.j3o</model>
+</effect>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : rsib-tokyo.xml
+    Created on : 15. Jul 2012, 04:20
+    Author     : rampage
+    Description:
+        Description file of an rs installation base.
+        It keeps general attributes and abilities to associate with the object.
+-->
+
+<object>
+    <type>installation</type>
+    <model>model.j3o</model>
+    <controls>
+        <damage>
+            <hull_hp>800000</hull_hp>
+            <deatheffect>explosion</deatheffect>
+            <effects>
+                <weapon>
+                    <file>hullhit</file>
+                </weapon>
+            </effects>
+        </damage>
+        <sensor>
+            <maxrange>15000</maxrange>
+        </sensor>
+<!--        
+        <shield>
+            <strength>80000</strength>
+            <regeneration>300</regeneration>
+            <hiteffect>shieldblast</hiteffect>
+        </shield>
+        <flight>
+            <topspeed>30</topspeed>
+            <lineardamp>2.5</lineardamp>
+            <angulardamp>1</angulardamp>
+            <momentum>0.125</momentum>
+            <acceleration>5.0</acceleration>
+            <turnrate>0.25</turnrate>
+            <topspeedreverse>10</topspeedreverse>
+        </flight>
+        <bays>
+            <startbay>
+                <position>[160.0, 0.0, 750.0]</position>
+                <angle>[0.0, 45.0, 0.0]</angle>
+                <usagetime>2</usagetime>
+                <accelerationtime>1</accelerationtime>
+                <velocity>[0, 0, 800]</velocity>
+            </startbay>
+            <startbay>
+                <position>[-160.0, 0.0, 750.0]</position>
+                <angle>[0.0, -45.0, 0.0]</angle>
+                <usagetime>2</usagetime>
+                <accelerationtime>1</accelerationtime>
+                <velocity>[0, 0, 800]</velocity>
+            </startbay>
+        </bays>       
+        <ai>   
+        </ai>
+-->        
+        <physics>
+            <mass>0</mass>
+        </physics>
+        <turrets>
+            <turret>
+                <type>laserturret</type>
+            </turret>
+        </turrets>
+    </controls>
+</object>

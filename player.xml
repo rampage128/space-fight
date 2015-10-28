@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<player>
+  <nickname>rampage</nickname>
+  <multiplayer>
+    <favourites>
+      <favourite>
+        <address>localhost:4163</address>
+      </favourite>
+      <favourite>
+        <address>localhost:4163</address>
+      </favourite>
+    </favourites>
+  </multiplayer>
+</player>
+

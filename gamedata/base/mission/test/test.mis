@@ -1,0 +1,4 @@
+[mission]
+title = Testmission No 1
+script = test.js
+level = test2

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty-styles>
+  <style id="sf-panel">
+    <attributes padding="8px,8px,8px,8px" backgroundImage="ui/styles/panel/sf-panel.png" imageMode="resize" />
+  </style>
+  
+  <!-- RESETTING DEFAULT NIFTY-PANEL STYLE TO REMOVE BACKGROUND OF TABS! -->
+  <style id="nifty-panel">
+    <attributes padding="0px,0px,0px,0px" />
+  </style>
+</nifty-styles>

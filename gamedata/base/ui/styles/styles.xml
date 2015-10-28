@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty-styles>
+  <useStyles filename="ui/styles/panel/nifty-panel.xml" />
+  <useStyles filename="ui/styles/tabs/nifty-tabs.xml" />
+  <useStyles filename="ui/styles/button/nifty-button.xml" />
+  <useStyles filename="ui/styles/listbox/nifty-listbox.xml" />
+</nifty-styles>

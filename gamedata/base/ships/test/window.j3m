@@ -1,0 +1,15 @@
+Material MyMaterial : Common/MatDefs/Light/Lighting.j3md {
+    MaterialParameters {
+        DiffuseMap : Flip ships/test/window_d.png
+        Specular : 1.0 1.0 1.0 1.0
+        Diffuse : 1.0 1.0 1.0 1.0
+        UseMaterialColors : true
+        ParallaxHeight : 0.05
+        NormalMap : Flip ships/test/window_n.png
+        Ambient : 1.0 1.0 1.0 1.0
+        Shininess : 128.0
+    }
+    AdditionalRenderState {
+
+    }
+}

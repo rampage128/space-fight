@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : jousting.xml
+    Created on : 23. April 2012, 18:49
+    Author     : rampage
+    Description:
+        First mission file describing a Mission where two destroyers are closing in
+        on each other supported by bombers, fighters and interceptors.
+-->
+
+<mission>
+    <name>Test Asteroids 2</name>
+    <level>test2</level>
+    <factions>
+        <faction>
+            <id>1</id>
+            <name>Formation</name>
+            <flights>
+                <flight>
+                    <id>fleet_1</id>
+                    <type>object</type>
+                    <objects>
+                        <object>
+                            <id>destroyer_1</id>
+                            <type>destroyer</type>
+                        </object>
+                    </objects>
+                    <spawn>
+                        <position>[10000.0, 0.0, 0.0]</position>
+                        <facing>[0.0, 0.0, 0.0]</facing>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>move</type>
+                            <position>[-10000.0, 0.0, 0.0]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[10000.0, 0.0, 0.0]</position>
+                        </task>
+                    </tasks>
+                </flight>
+                <flight>
+                    <id>flight_1</id>
+                    <type>client</type>
+                    <name>echelon</name>
+                    <defaultship>predator</defaultship>
+                    <formation>echelon</formation>
+                    <spawn>
+                        <position>[-9000.0, 0.0, -1000]</position>
+                        <facing>[0.0, 0.0, 0.0]</facing>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>move</type>
+                            <position>[9000.0, 0.0, 1000]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[-9000.0, 0.0, -1000]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[9000.0, 0.0, -1000]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[-9000.0, 0.0, -1000]</position>
+                        </task>
+                    </tasks>
+                </flight>
+            </flights>
+        </faction>
+    </factions>
+    <objects>
+        <object>
+            <type>field</type>
+            <id>asteroidfield</id>
+            <objecttype>asteroid</objecttype>
+            <size>[15000, 15000, 15000]</size>
+            <density>0.2</density>
+            <maxscale>35</maxscale>
+            <spawn>
+                <position>[0.0, 0.0, 0.0]</position>
+                <facing>[0.0, 0.0, 0.0]</facing>
+            </spawn>
+        </object>
+    </objects>
+</mission>

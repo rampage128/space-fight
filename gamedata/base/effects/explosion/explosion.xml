@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : explosion.xml
+    Created on : 29. Mai 2012, 14:46
+    Author     : rampage
+    Description:
+        Description of explosion effect.
+-->
+
+<effect>
+    <type>once</type>
+    <model>explosion.j3o</model>
+    <sound>
+        <file>explosion.ogg</file>
+        <volume>0.5</volume>
+        <maxdistance>800</maxdistance>
+        <refdistance>100</refdistance>
+    </sound>
+</effect>

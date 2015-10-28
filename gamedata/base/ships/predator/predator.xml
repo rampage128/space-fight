@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : predator.xml
+    Created on : 29. Mai 2012, 15:11
+    Author     : rampage
+    Description:
+        Description file for predator.
+-->
+
+<ship>
+    <type>interceptor</type>
+    <model>predator.j3o</model>
+    <controls>
+        <weapons>
+            <slots>
+                <slot>
+                    <type>primary</type>
+                    <size>2</size>
+                    <defaultweapon>laser</defaultweapon>
+                    <position>[2.8, -0.2, 2.9]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+                <slot>
+                    <type>primary</type>
+                    <size>2</size>
+                    <defaultweapon>laser</defaultweapon>
+                    <position>[-2.8, -0.2, 2.9]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+                <slot>
+                    <type>secondary</type>
+                    <size>4</size>
+                    <defaultweapon>missile</defaultweapon>
+                    <position>[0.0, -0.5, 1.6]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+            </slots>
+        </weapons>
+        <flight>
+            <engines>
+                <engine>
+                    <node>engine1</node>
+                    <width>3</width>
+                    <model>engine.j3o</model>
+                    <!--<position>[-3.0, 1.25, -3.5]</position>-->
+                    <material>effects/trail.j3m</material>
+                    <sound>
+                        <file>engine.ogg</file>
+                        <volume>0.5</volume>
+                        <maxdistance>300</maxdistance>
+                        <refdistance>50</refdistance>
+                    </sound>
+                </engine>
+                <engine>
+                    <node>engine2</node>
+                    <width>3</width>
+                    <model>engine.j3o</model>
+                    <!--<position>[3.0, 1.25, -3.5]</position>-->
+                    <material>effects/trail.j3m</material>
+                    <sound>
+                        <file>engine.ogg</file>
+                        <volume>0.5</volume>
+                        <maxdistance>300</maxdistance>
+                        <refdistance>50</refdistance>
+                    </sound>
+                </engine>
+            </engines>
+        </flight>
+        <damage>
+            <deatheffect>explosion</deatheffect>
+            <effects>
+                <weapon>
+                    <file>hullhit</file>
+                </weapon>
+                <collision>
+                    <file>collision</file>
+                </collision>
+            </effects>
+        </damage>
+        <shield>
+            <hiteffect>shieldblast</hiteffect>
+        </shield>
+    </controls>
+</ship>

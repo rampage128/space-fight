@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : laser.xml.xml
+    Created on : 29. Mai 2012, 15:13
+    Author     : rampage
+    Description:
+        Description file for weapon.
+-->
+
+<weapon>
+    <name>laser</name>
+    <type>energy</type>
+    <model>laser.j3o</model>
+    <damage>50</damage>
+    <range>3000</range>
+    <speed>500</speed>
+    <size>1</size>
+    <collisionradius>1f</collisionradius>
+    <muzzle>
+        <effect>lasermuzzle</effect>
+        <size>1</size>
+    </muzzle>
+    <blast>
+        <effect>laserblast</effect>
+        <size>1</size>
+    </blast>
+</weapon>

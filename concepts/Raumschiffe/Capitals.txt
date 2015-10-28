@@ -1,0 +1,63 @@
+Capitals
+
+Frigate (Fregatte)
+
+Kleine mobile Schiffe.
+Verwendung: Aufklärung, Angriff, Geleitschutz in großen Zahlen.
+
+Cruiser (Kreuzer)
+
+Kleines Begleitschiff.
+Verwendung: Patroullie, Angriff, Flottengeleitschutz.
+
+Commando (Kommandoschiff/Flottensignalgeber)
+
+Mittleres Begleitschiff.
+Verwendung: Flottengeleitschutz, Taktische Kriegsführung.
+
+Battleship (Schlachtschiff)
+
+Flottenschiff mit starker Panzerung und Bewaffnung.
+Verwendung: Flottenverband, Großkampfschiff.
+
+Carrier (Träger/Flottenkommando)
+
+Flottenschiff mit starker Panzerung und mäßiger Bewaffnung.
+Besitzt Lande- und Startbuchten und transportiert Jäger/Bomber.
+
+Namen und Kürzel:
+
+Das Kürzel setzt sich folgendermaßen zusammen:
+<Fraktionskürzel> <C-Capital> <Klassenkürzel>
+z.B.: ENCB = European Nation Capital Battleship
+Für Klassen werden typische Regions-, Fluss- oder Gebirgsnamen von Alt-Erde verwendet.
+z.B.: Everest, Brocken, Rhein, Donau, Kalahari
+Für die Instanzen werden Städte der jeweiligen Staaten gewählt.
+z.B.: ENCC Stockholm, CUCC Wladiwostok
+
+
+Installations
+
+Platform (Platform)
+
+"Kleine" unbewegliche (maximal drehbare) Platform. 
+z.B. Waffenplatform mit Geschütztürmen.
+
+Station (Platform)
+
+"Kleiner" stationärer Stützpunkt mit Lande- und Startbuchten.
+
+Harbour (Raumhafen)
+
+Großer Umschlagplatz mit Lande- und Startbuchten.
+
+Namen und Kürzel:
+
+Das Kürzel setzt sich folgendermaßen zusammen:
+<Fraktionskürzel> <I-Installation> <Typkürzel>
+z.B.: ENIH = European Nation Installation Harbour
+Für Klassen werden typische Gegenstände aus der alten Welt oder Funktionale Namen verwendet.
+z.B.: Düne (Orient), Berg (Europa), Phallanx (gerichtete Waffenplatform).
+Für die Instanzen (Anfertigungen der Installationen) werden Hauptstädte oder Regionsnamen verwendet.
+Platformen haben keine Instanznamen.
+z.B.: ENIS Rheinland, CUIC Moskow

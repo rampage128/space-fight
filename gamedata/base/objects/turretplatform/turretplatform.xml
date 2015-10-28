@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : turret.xml.xml
+    Created on : 29. Mai 2012, 14:35
+    Author     : rampage
+    Description:
+        Purpose of the document follows.
+-->
+
+<object>
+    <type>static</type>
+    <model>turretplatform.j3o</model>
+    <controls>
+        <damage>
+            <hull_hp>2000</hull_hp>
+            <deatheffect>explosion</deatheffect>
+            <effects>
+                <weapon>
+                    <file>hullhit</file>
+                </weapon>
+            </effects>
+        </damage>
+        <physics>
+            <type>rigidbody</type>
+            <mass>60000</mass>
+        </physics>
+        <turrets>
+            <turret>
+                <type>laserturret</type>
+            </turret>
+        </turrets>
+        <sensor>
+            <maxrange>4000</maxrange>
+        </sensor>
+    </controls>
+</object>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : infoconquestcontroller.xml
+    Created on : 29. Mai 2012, 14:35
+    Author     : rampage
+    Description:
+        Purpose of the document follows.
+-->
+
+<object>
+    <type>static</type>
+    <script>infoconquestcontroller.js</script>
+    
+</object>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : destroyer.xml
+    Created on : 29. Mai 2012, 12:37
+    Author     : rampage
+    Description:
+        Description file of the destroyer.
+        It keeps general attributes and abilities to associate with the object.
+-->
+
+<object>
+    <type>capital</type>
+    <model>tetsubo.j3o</model>
+    <controls>
+        <damage>
+            <hull_hp>240000</hull_hp>
+            <deatheffect>explosion</deatheffect>
+            <effects>
+                <weapon>
+                    <file>hullhit</file>
+                </weapon>
+            </effects>
+        </damage>
+        <shield>
+            <strength>320000</strength>
+            <regeneration>300</regeneration>
+            <hiteffect>shieldblast</hiteffect>
+        </shield>
+        <sensor>
+            <maxrange>15000</maxrange>
+        </sensor>
+        <flight>
+            <hascruise>false</hascruise>
+            <topspeed>30</topspeed>
+            <lineardamp>2.5</lineardamp>
+            <angulardamp>1</angulardamp>
+            <momentum>0.125</momentum>
+            <acceleration>5.0</acceleration>
+            <turnrate>0.25</turnrate>
+            <topspeedreverse>10</topspeedreverse>
+            <nozzlesound>
+                <file>engine.ogg</file>
+                <volume>2</volume>
+                <maxdistance>1200</maxdistance>
+                <refdistance>400</refdistance>
+                <position>[0.0, 0.0, -740.0]</position>
+            </nozzlesound>
+        </flight>
+        <physics>
+            <mass>800000</mass>
+        </physics>
+        <turrets>
+            <turret>
+                <type>laserturret</type>
+            </turret>
+        </turrets>
+        <bays>
+            <startbay>
+                <position>[160.0, 0.0, 750.0]</position>
+                <angle>[0.0, 45.0, 0.0]</angle>
+                <usagetime>2</usagetime>
+                <accelerationtime>1</accelerationtime>
+                <velocity>[0, 0, 800]</velocity>
+            </startbay>
+            <startbay>
+                <position>[-160.0, 0.0, 750.0]</position>
+                <angle>[0.0, -45.0, 0.0]</angle>
+                <usagetime>2</usagetime>
+                <accelerationtime>1</accelerationtime>
+                <velocity>[0, 0, 800]</velocity>
+            </startbay>
+        </bays>
+        <ai>   
+        </ai>
+    </controls>
+</object>

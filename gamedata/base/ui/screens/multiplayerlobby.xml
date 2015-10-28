@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+    <useStyles filename="nifty-default-styles.xml" />
+    <useStyles filename="ui/styles/fonts.xml" />
+    <useStyles filename="ui/styles/styles.xml" />    
+    <useControls filename="nifty-default-controls.xml" />
+    <useControls filename="ui/controls/controls.xml" />
+        
+    <!-- /////////////////////////////////////////////////////////////////// -->
+    <!-- // MULTIPLAYER GAME LOBBY ///////////////////////////////////////// -->
+    <!-- /////////////////////////////////////////////////////////////////// -->
+    <screen id="multiplayerlobby" controller="de.jlab.spacefight.ui.screens.MultiplayerLobby">
+        <layer id="controls" childLayout="vertical">
+            <panel height="40px" width="50%" childLayout="horizontal" align="center" padding="4px,0px,4px,0px">
+                <effect>
+                    <onStartScreen name="move" mode="in" direction="bottom" length="300" startDelay="0" inherit="true"/>
+                    <onEndScreen name="move" mode="out" direction="bottom" length="300" startDelay="0" inherit="true"/>
+                </effect>
+                <panel height="32px" width="100%" childLayout="center" align="center" style="sf-panel">
+                    <control name="label" text="Multiplayer" />
+                </panel>
+            </panel>
+            <panel height="36px" width="50%" childLayout="horizontal" align="center" padding="0px,0px,4px,0px">
+                <effect>
+                    <onStartScreen name="fade" start="#00" end="#ff" length="300" startDelay="300" inherit="true"/>
+                    <onEndScreen name="fade" start="#ff" end="#00" length="300" startDelay="0" inherit="true"/>
+                </effect>
+                <panel height="100%" width="*" childLayout="center" padding="0px,2px,0px,0px">
+                    <control name="button" label="Lobby" id="button_lobby" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="showLobby()"/>
+                    </control>
+                </panel>
+                <panel height="100%" width="*" childLayout="center" padding="0px,2px,0px,2px">
+                    <control name="button" label="Missions" id="button_missions" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="showMissions()"/>
+                    </control>
+                </panel>
+                <panel height="100%" width="*" childLayout="center" padding="0px,0px,0px,2px">
+                    <control name="button" label="Options" id="button_options" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="showOptions()"/>
+                    </control>
+                </panel>
+            </panel>
+            <panel height="*" width="50%" childLayout="overlay" align="center" valign="center">
+                <effect>
+                    <onStartScreen name="fade" start="#00" end="#ff" length="300" startDelay="300" inherit="true"/>
+                    <onEndScreen name="fade" start="#ff" end="#00" length="300" startDelay="0" inherit="true"/>
+                </effect> 
+                
+                <panel id="tab_lobby" childLayout="vertical">
+                    <panel childLayout="vertical" style="sf-panel" height="*">
+                        <!-- NEXT MISSION -->
+                    </panel>
+                    <panel height="4px" />
+                    <panel childLayout="horizontal" style="sf-panel" height="*">
+                        <!-- CHAT, PLAYERLIST -->
+                        <panel childLayout="vertical">
+                            <control name="advanced-list" id="chatlist" displayItems="6" vertical="optional" horizontal="optional" valign="center" width="100%" height="*" visibleToMouse="true" />
+                            <panel childLayout="horizontal" padding="4px,0px,0px,0px">
+                                <control name="textfield" id="chatmessage" width="*" />
+                                <control name="button" label=">>" id="chatbutton" visibleToMouse="true"> 
+                                    <interact onClick="sendchat()"/>
+                                </control>
+                            </panel>
+                        </panel>
+                        <panel width="4px" />
+                        <control name="advanced-list" id="playerlist" displayItems="6" vertical="optional" horizontal="optional" valign="center" width="35%" height="*" visibleToMouse="true" />                        
+                    </panel>
+                </panel>
+                <panel id="tab_missions" childLayout="vertical">
+                    <panel childLayout="vertical" style="sf-panel" height="*">
+                        <!-- MISSION LIST (WITH ADD/REMOVE/EDIT OPTIONS FOR HOST) -->
+                    </panel>
+                    <panel height="4px" />
+                    <panel childLayout="vertical" style="sf-panel" height="*">
+                        <!-- MISSION DETAIL-VIEW (FOR ABOVE SELECTED MISSION) -->
+                    </panel>
+                </panel>
+                <panel id="tab_options" childLayout="vertical">
+                    <panel childLayout="vertical" style="sf-panel" height="*">                              
+                        <!-- SERVER OPTIONS (MAXCLIENTS, SYNCH, ETC.), GAME-OPTIONS (FF, ETC) -->
+                    </panel>
+                </panel>
+                
+            </panel>
+            <panel height="40px" width="50%" childLayout="horizontal" align="center" padding="4px,0px,4px,0px">
+                <effect>
+                    <onStartScreen name="move" mode="in" direction="bottom" length="300" startDelay="0" inherit="true"/>
+                    <onEndScreen name="move" mode="out" direction="bottom" length="300" startDelay="0" inherit="true"/>
+                </effect>
+                <panel height="100%" width="*" childLayout="center">
+                    <control name="button" label="Leave Game" id="leavebutton" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="leavegame()"/>
+                    </control>
+                </panel>
+                <panel height="100%" width="*" childLayout="center">
+
+                </panel>
+                <panel height="100%" width="*" childLayout="center">
+                    <control name="button" label="Start Game" id="startbutton" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="startgame()"/>
+                    </control>
+                </panel>
+            </panel>
+        </layer>
+    </screen>
+</nifty>

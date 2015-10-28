@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : jousting.xml
+    Created on : 23. April 2012, 18:49
+    Author     : rampage
+    Description:
+        First mission file describing a Mission where two destroyers are closing in
+        on each other supported by bombers, fighters and interceptors.
+-->
+
+<mission>
+    <name>Jousting</name>
+    <level>sol7</level>
+    <factions>
+        <faction>
+            <id>1</id>
+            <name>Formation</name>
+            <flights>
+                <flight>
+                    <id>testinstallation</id>
+                    <type>object</type>
+                    <objects>
+                        <object>
+                            <id>testinstallation</id>
+                            <type>rsib-tokyo</type>
+                        </object>
+                    </objects>
+                    <spawn>
+                        <position>[-8000.0, 0.0, -5000.0]</position>
+                        <facing>[-8000.0, 0.0, 0.0]</facing>
+                    </spawn>
+                </flight>
+                <flight>
+                    <id>bombers_1</id>
+                    <type>client</type>
+                    <name>echelon</name>
+                    <defaultship>rapier</defaultship>
+                    <formation>echelon</formation>
+                    <spawn>
+                        <position>[0.0, 0.0, 30]</position>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>move</type>
+                            <position>[3000.0, 0.0, 30]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[3000.0, 0.0, -300]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[0.0, 0.0, -300]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[3000.0, 0.0, 30]</position>
+                        </task>
+                    </tasks>
+                </flight>
+            </flights>
+        </faction>
+        <faction>
+            <id>2</id>
+            <name>Dummy</name>
+       </faction>
+    </factions>
+</mission>

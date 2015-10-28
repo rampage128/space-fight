@@ -1,0 +1,48 @@
+Verzeichnisstruktur
+
+
+Entwicklungsdaten
+
+artwork/ - Verzeichnis für Rohdaten (PSDs, Originale Modelle usw.) 
+           mit Struktur wie Spieldaten
+concepts/ - Freier Ordner für Konzepte & Ideen
+
+
+Spieldaten
+
+Ebene 1 (implizit)
+gamedata/ - Haupt Datenverzeichnis
+
+  Ebene 2 (durch locator)
+  base/ - Datenverzeichnis Hauptspiel
+  <mod>/ - Datenverzeichnisse feste Mods
+  custom/ - Datenverzeichnis eigene Daten
+  cache/ - Datenverzeichnis Cache-Daten
+
+    Ebene 3 (konstant/durch Methoden)
+    level/ - Levels
+    ships/ - Allgemeine Raumschiffe
+    ui/ - Benutzeroberfläche
+
+
+Reihenfolge der Dateisuche:
+
+- Bei durch den Spieler ersetzbaren Dingen (eigenes Schiff z.B.) wird im
+  custom Ordner gesucht.
+- Danach wird im aktuellen Mod-Ordner danach gesucht.
+- Danach wird im base-Ordner danach gesucht.
+
+- Wird ein Objekt (Level, Shiff usw.) geladen, werden die abhängigen Dateien 
+  zunächst vom Lokalen Ort aus gesucht (Verzeichnis/pak des Objekts).
+
+TODO
+
+Es muss noch überlegt werden, wie die Dateien sortiert werden.
+Ob texturen und Modelle direkt in den jeweiligen objektordnern liegen (z.B. der 
+Triebwerksound im Ordner des raumschiffs) oder ob die Daten in zentralen Ordnern
+(z.B. sounds, textures, models) liegen. Ggf. ist auch beides sinnvoll. Hier
+könnte es helfen, dass bei der Reihenfolge der Dateisuche der aktuelle Pfad
+vom objekt als Locator hinzugefügt wird. So kann man die Pfade von texturen usw.
+in den Objekten als relative pfade angeben.
+Vielleicht muss auch außerhalb der Pipeline ein eigenes Dateisuchsystem 
+implementiert werden. Dies ist noch zu klären.

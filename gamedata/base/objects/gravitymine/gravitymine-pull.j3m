@@ -1,0 +1,18 @@
+Material MyMaterial : Common/MatDefs/Misc/Particle.j3md {
+    MaterialParameters {
+        DepthTexture : effects/explosion/shockwave.png
+        Texture : effects/explosion/shockwave.png
+        PointSprite : false
+    }
+    AdditionalRenderState {
+      FaceCull Back
+      Wireframe Off
+      DepthWrite On
+      PolyOffset 0.0 0.0
+      AlphaTestFalloff 0.0
+      Blend AlphaAdditive
+      PointSprite Off
+      ColorWrite On
+      DepthTest On
+    }
+}

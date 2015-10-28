@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty-controls>
+    <useControls filename="ui/controls/sf-listbox.xml" />
+    <useControls filename="ui/controls/sf-listitems.xml" />
+    <useControls filename="ui/controls/nifty-progressbar.xml" />
+</nifty-controls>

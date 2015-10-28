@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : test_conquest.xml
+    Created on : 23. April 2012, 18:49
+    Author     : rampage
+    Description:
+        Test mission for conquest game-mode.
+-->
+
+<mission>
+    <name>Test Conquest</name>
+    <level>sol7</level>
+    <factions>
+        <faction>
+            <id>1</id>
+            <name>Team 1</name>
+            <flights>
+                <flight>
+                    <id>bombers_1</id>
+                    <type>client</type>
+                    <name>echelon</name>
+                    <defaultship>rapier</defaultship>
+                    <formation>echelon</formation>
+                    <spawn>
+                        <position>[5000.0, 0.0, 0.0]</position>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>patrol</type>
+                            <position>[500.0, 0.0, 0.0]</position>
+                        </task>
+<!--                        
+                        <task>
+                            <type>move</type>
+                            <position>[0.0, 0.0, -4500]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[0.0, 0.0, 4500]</position>
+                        </task>
+-->                        
+                    </tasks>
+                </flight>
+            </flights>
+        </faction>
+        <faction>
+            <id>2</id>
+            <name>Team 2</name>
+            <flights>
+                <flight>
+                    <id>bombers_2</id>
+                    <type>client</type>
+                    <name>echelon</name>
+                    <defaultship>rapier</defaultship>
+                    <formation>echelon</formation>
+                    <spawn>
+                        <position>[-5000.0, 0.0, 0.0]</position>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>patrol</type>
+                            <position>[-500.0, 0.0, 0.0]</position>
+                        </task>
+<!--                        
+                        <task>
+                            <type>move</type>
+                            <position>[0.0, 0.0, 4500]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[0.0, 0.0, -4500]</position>
+                        </task>
+-->                        
+                    </tasks>
+                </flight>
+            </flights>
+        </faction>
+    </factions>
+    <objects>
+<!--        
+        <object>
+            <id>testinstallation-a</id>
+            <type>rsib-tokyo</type>
+            <spawn>
+                <position>[0.0, 0.0, 5000]</position>
+            </spawn>
+        </object>
+        <object>
+            <id>testinstallation-b</id>
+            <type>rsib-tokyo</type>
+            <spawn>
+                <position>[0.0, 0.0, -5000]</position>
+            </spawn>
+        </object>
+-->        
+
+        <object>
+            <id>point-a</id>
+            <type>infoconquestpoint</type>
+            <spawn>
+                <position>[0.0, 0.0, 0.0]</position>
+            </spawn>
+        </object>
+        
+        <object>
+            <id>conquestcontroller</id>
+            <type>infoconquestcontroller</type>
+            <spawn>
+                <position>[80000.0, 80000.0, 80000.0]</position>
+            </spawn>
+        </object>
+        
+        <object>
+            <id>testdestroyer</id>
+            <type>destroyer</type>
+            <spawn>
+                <position>[0.0, 0.0, -1000.0]</position>
+            </spawn>
+        </object>
+
+<!--
+        <object>
+            <id>point-a</id>
+            <type>infoconquestpoint</type>
+            <spawn>
+                <position>[0.0, 0.0, 5000]</position>
+            </spawn>
+        </object>
+        <object>
+            <id>point-b</id>
+            <type>infoconquestpoint</type>
+            <spawn>
+                <position>[0.0, 0.0, -5000]</position>
+            </spawn>
+        </object>
+-->        
+    </objects>
+</mission>

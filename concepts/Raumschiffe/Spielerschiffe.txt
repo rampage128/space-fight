@@ -1,0 +1,31 @@
+Spielerschiffe
+
+Alle vom Spieler steuerbaren Raumschiffe besitzen die selbe Mechanik (Waffenslots, Schilde, Geschwindigkeit, Hüllenstärke).
+
+Dabei sorgen verschiedene Schiffstypen, Waffengattungen und Extras für eine maximal balancierte Veränderbarkeit.
+
+Schiffstypen
+- Kampfschiff
+- Abfangjäger
+- Bomber
+
+Kampfschiff
+- 4 Primärslots
+- 4 Raketenslots
+- Mittlere Geschwindigkeit
+- Mittlere Hüllenstärke
+- Mittlere Schildstärke
+
+Abfangjäger
+- 4 Primärslots
+- 2 Raketenslots
+- Hohe Geschwindigkeit
+- Niedrige Hüllenstärke
+- Niedrige Schildstärke
+
+Bomber
+- 2 Primärslots
+- 6 Raketenslots
+- Niedrige Gechwindigkeit
+- Hohe Hüllenstärke
+- Hohe Schildstärke

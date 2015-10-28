@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : repair.xml
+    Created on : 29. Mai 2012, 15:13
+    Author     : rampage
+    Description:
+        Description file for perk.
+-->
+
+<perk>
+    <name>Repair Buoy</name>
+    <type>once</type>
+    <script>repair.js</script>
+    <cooldown>30</cooldown>
+</perk>

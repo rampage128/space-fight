@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : explosion.xml
+    Created on : 29. Mai 2012, 14:46
+    Author     : rampage
+    Description:
+        Description of laser blast effect.
+-->
+
+<effect>
+    <type>once</type>
+    <model></model>
+    <sound>
+        <file>laser.ogg</file>
+        <volume>0.5</volume>
+        <maxdistance>800</maxdistance>
+        <refdistance>100</refdistance>
+    </sound>
+</effect>

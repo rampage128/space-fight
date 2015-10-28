@@ -1,0 +1,10 @@
+Material My Material : Common/MatDefs/Misc/Particle.j3md {
+     MaterialParameters {
+        PointSprite : true
+        DepthTexture : effects/explosion2/smoke01.png
+        Texture : effects/explosion2/smoke01.png
+     }
+    AdditionalRenderState {
+      PointSprite On
+    }
+}

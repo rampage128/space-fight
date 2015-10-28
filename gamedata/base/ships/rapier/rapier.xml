@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : rapier.xml
+    Created on : 29. Mai 2012, 15:12
+    Author     : rampage
+    Description:
+        Description file for rapier.
+-->
+
+<ship>
+    <type>bomber</type>
+    <model>rapier.j3o</model>
+    <controls>
+        <weapons>
+            <slots>
+                <slot>
+                    <type>primary</type>
+                    <size>2</size>
+                    <defaultweapon>laser</defaultweapon>
+                    <position>[2.95, 2.2, -0.8]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+                <slot>
+                    <type>primary</type>
+                    <size>2</size>
+                    <defaultweapon>laser</defaultweapon>
+                    <position>[-1.1, -0.4, 6.6]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+                <slot>
+                    <type>primary</type>
+                    <size>2</size>
+                    <defaultweapon>laser</defaultweapon>
+                    <position>[-2.95, 2.2, -0.8]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+                <slot>
+                    <type>primary</type>
+                    <size>2</size>
+                    <defaultweapon>laser</defaultweapon>
+                    <position>[1.1, -0.4, 6.6]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+                <slot>
+                    <type>secondary</type>
+                    <size>4</size>
+                    <defaultweapon>missile</defaultweapon>
+                    <position>[1.6, 0.35, 2.0]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+                <slot>
+                    <type>secondary</type>
+                    <size>4</size>
+                    <defaultweapon>missile</defaultweapon>
+                    <position>[-1.6, 0.35, 2.0]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+                <slot>
+                    <type>secondary</type>
+                    <size>4</size>
+                    <defaultweapon>missile</defaultweapon>
+                    <position>[1.65, -1.0, 2.0]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+                <slot>
+                    <type>secondary</type>
+                    <size>4</size>
+                    <defaultweapon>missile</defaultweapon>
+                    <position>[-1.65, -1.0, 2.0]</position>
+                    <rotation>[0.0, 0.0, 0.0]</rotation>
+                </slot>
+            </slots>
+        </weapons>
+        <flight>
+            <engines>
+                <engine>
+                    <node>engine1</node>
+                    <!--<position>[-3.0, 1.25, -3.5]</position>-->
+                    <material>effects/trail.j3m</material>
+                    <model>engine-rapier.j3o</model>
+                    <width>3</width>
+                    <sound>
+                        <file>engine.ogg</file>
+                        <volume>0.5</volume>
+                        <maxdistance>300</maxdistance>
+                        <refdistance>50</refdistance>
+                    </sound>
+                </engine>
+                <engine>
+                    <node>engine2</node>
+                    <!--<position>[3.0, 1.25, -3.5]</position>-->
+                    <material>effects/trail.j3m</material>
+                    <model>engine-rapier.j3o</model>
+                    <width>3</width>
+                    <sound>
+                        <file>engine.ogg</file>
+                        <volume>0.5</volume>
+                        <maxdistance>300</maxdistance>
+                        <refdistance>50</refdistance>
+                    </sound>
+                </engine>
+            </engines>
+        </flight>
+        <damage>
+            <deatheffect>explosion</deatheffect>
+            <effects>
+                <weapon>
+                    <file>hullhit</file>
+                </weapon>
+                <collision>
+                    <file>collision</file>
+                </collision>
+            </effects>
+        </damage>
+        <shield>
+            <hiteffect>shieldblast</hiteffect>
+        </shield>
+    </controls>
+</ship>

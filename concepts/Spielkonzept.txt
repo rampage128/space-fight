@@ -1,0 +1,20 @@
+Spielkonzept
+
+StarFight ist eine Weltraum-Simulation, in der die Spieler in Kampfschiffen 
+gegeinander kämpfen und Missionen bestreiten. Das Primärziel ist eine 
+einheitliche Balance und eine möglichst umfangreiche Mod-Kompatiblität.
+
+Insbesondere die Spielerschiffe sollen eine möglichst gleiche Mechanik besitzen, 
+damit die Balance des Grundspiels fair ist. Die Optik der Spielerschiffe 
+(inklusive Waffenoptik) soll dabei innerhalb gewisser Parameter (Erfüllung der 
+Mechanik und Größenverhältnisse) veränderbar sein. Jeder Spieler kann ein 
+Standardschiff auswählen.
+
+Die Missionen können beliebig gestaltet werden und ein komplett eigenes 
+Repertoire an Ressourcen (Raumschiffe, Grafiken, Sounds, ...) besitzen. 
+Missionen enthalten außerdem Scripte für den Ablauf und die Siegbedingungen.
+
+Missionen können als Einzelmissionen oder mit automatischem Übergang zu einer 
+anderen Mission eingerichtet werden. Dabei entscheidet der Spieler bei der 
+Missionsauswahl ob er eine Einzelmission, den Vorgegebenen Modus oder einen 
+eigenen Map-Cycle spielen will.

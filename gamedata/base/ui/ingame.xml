@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : menu.xml
+    Created on : 27. März 2012, 09:48
+    Author     : rampage
+    Description:
+        XML DESCRIPTOR FOR THE MAIN MENU OF THE GAME (OUTSIDE OF GAMEPLAY).
+-->
+
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+    <useStyles filename="nifty-default-styles.xml" />
+    <useStyles filename="ui/styles/fonts.xml" />
+    <useStyles filename="ui/styles/styles.xml" />
+    
+    <useControls filename="nifty-default-controls.xml" />
+    <useControls filename="ui/controls/controls.xml" />
+    
+    <!-- /////////////////////////////////////////////////////////////////// -->
+    <!-- // CUSTOM CONTROLS //////////////////////////////////////////////// -->
+    <!-- /////////////////////////////////////////////////////////////////// -->
+    
+    <!-- SCOREBOARD CONTROL -->
+    <controlDefinition name="scoreboard" controller="de.jlab.spacefight.ui.ingame.ScoreboardControl">
+        <panel backgroundColor="#f00f" width="100%" height="100%" childLayout="vertical">
+            <panel backgroundColor="#0f0f" width="100%" childLayout="horizontal">
+                <control name="label" text="Faction" />
+                <control name="label" text="0" />
+            </panel>
+        </panel>
+    </controlDefinition>
+  
+    <!-- /////////////////////////////////////////////////////////////////// -->
+    <!-- // INGAME MENU //////////////////////////////////////////////////// -->
+    <!-- /////////////////////////////////////////////////////////////////// -->
+  
+    <!--
+        NOTE: THIS SCREEN MAY BECOME OBSOLETE AND MERGED WITH THE SPAWN SCREEN!
+              NOT SURE ABOUT THIS YET...
+    -->
+    <screen id="menu" controller="de.jlab.spacefight.ui.ingame.IngameMenuController">
+        <layer id="controls" childLayout="vertical">
+            <panel height="*" width="50%" childLayout="horizontal" align="center">
+            
+            </panel>
+            <panel height="40px" width="50%" childLayout="horizontal" align="center" padding="4px,0px,4px,0px">
+                <effect>
+                    <onStartScreen name="move" mode="in" direction="bottom" length="300" startDelay="0" inherit="true"/>
+                    <onEndScreen name="move" mode="out" direction="bottom" length="300" startDelay="0" inherit="true"/>
+                </effect>        
+                <panel height="100%" width="*" childLayout="center" padding="0px,2px,0px,0px">
+                    <control name="button" label="Resume" id="StartButton" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="resumeGame()"/>
+                    </control>
+                </panel>
+                <panel height="100%" width="*" childLayout="center" padding="0px,2px,0px,2px">
+                    <control name="button" label="Switch Flight" id="factionSelect()" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="selectFlight()"/>
+                    </control>
+                </panel>
+                <panel height="100%" width="*" childLayout="center" padding="0px,0px,0px,2px">
+                    <control name="button" label="Quit" id="QuitButton" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="quitGame()"/>
+                    </control>
+                </panel>
+            </panel>
+        </layer>
+    </screen>
+  
+    <!-- /////////////////////////////////////////////////////////////////// -->
+    <!-- // FLIGHT SELECT (DEPRECATED!) //////////////////////////////////// -->
+    <!-- /////////////////////////////////////////////////////////////////// -->
+  
+    <!--
+        FLIGHT SELECT SCREEN IS DEPRECATED AND WILL BE MOVED INTO SPAWN SCREEN
+        SOON! CONTINUE WORKING ON THIS BECAUSE IT WILL BE MERGED LATER...
+    -->
+    <screen id="flightselect" controller="de.jlab.spacefight.ui.ingame.FactionSelectController">
+        <layer id="controls" childLayout="vertical">
+            <panel height="40px" width="50%" childLayout="horizontal" align="center" padding="4px,0px,4px,0px">
+                <panel height="32px" width="100%" childLayout="center" align="center" style="sf-panel">
+                    <control name="label" text="Flight Select (deprecated)" />
+                </panel>
+            </panel>
+            <panel height="*" width="50%" childLayout="horizontal" align="center" style="sf-panel">
+                <effect>
+                    <onStartScreen name="move" mode="in" direction="top" length="300" startDelay="0" inherit="true"/>
+                    <onEndScreen name="move" mode="out" direction="top" length="300" startDelay="0" inherit="true"/>
+                </effect> 
+                <panel height="100%" width="*" childLayout="vertical" style="nifty-panel">
+                    <control name="listBox" displayItems="4" vertical="optional" horizontal="optional" id="factionlist" valign="center" width="100%" visibleToMouse="true"> 
+                    </control>
+                    <control name="listBox" displayItems="8" vertical="optional" horizontal="optional" id="flightlist" valign="center" width="100%" visibleToMouse="true"> 
+                    </control>
+                    <control name="listBox" displayItems="8" vertical="optional" horizontal="optional" id="clientlist" valign="center" width="100%" visibleToMouse="true"> 
+                    </control>
+                </panel>
+            </panel>
+            <panel height="40px" width="50%" childLayout="horizontal" align="center" padding="4px,0px,4px,0px">
+                <effect>
+                    <onStartScreen name="move" mode="in" direction="bottom" length="300" startDelay="0" inherit="true"/>
+                    <onEndScreen name="move" mode="out" direction="bottom" length="300" startDelay="0" inherit="true"/>
+                </effect>        
+                <panel height="100%" width="*" childLayout="center">
+                    <control name="button" label="Back" id="backbutton" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="back()"/>
+                    </control>
+                </panel>
+                <panel height="100%" width="*" childLayout="center">
+                    <control name="button" label="Spectator" id="spectatebutton" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="spectate()"/>
+                    </control>
+                </panel>
+                <panel height="100%" width="*" childLayout="center">
+                    <control name="button" label="Select Flight" id="startbutton" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="selectFlight()"/>
+                    </control>
+                </panel>
+            </panel>
+        </layer>
+    </screen>
+    
+    <!-- /////////////////////////////////////////////////////////////////// -->
+    <!-- // SPAWN SCREEN /////////////////////////////////////////////////// -->
+    <!-- /////////////////////////////////////////////////////////////////// -->
+    
+    <screen id="spawnscreen" controller="de.jlab.spacefight.ui.ingame.SpawnScreenController">
+        <layer id="controls" childLayout="vertical">
+            <panel height="40px" width="50%" childLayout="horizontal" align="center" padding="4px,0px,4px,0px">
+                <panel height="32px" width="100%" childLayout="center" align="center" style="sf-panel">
+                    <control name="label" text="Deployment &amp; Setup" />
+                </panel>
+            </panel>
+            <panel height="*" width="50%" childLayout="center" align="center">
+                <effect>
+                    <onStartScreen name="move" mode="in" direction="top" length="300" startDelay="0" inherit="true"/>
+                    <onEndScreen name="move" mode="out" direction="top" length="300" startDelay="0" inherit="true"/>
+                </effect> 
+                <control id="spawntabs" name="nifty-tabs" buttonHeight="32px" buttonWidth="*">
+                    <control id="tab_spawn" name="nifty-tab" caption="Deployment">
+                        <panel childLayout="vertical">
+                            <panel height="*" style="sf-panel" childLayout="vertical">
+                                <control name="label" text="Select deployment location" align="left" />
+                                <panel height="4px" />
+                                <control name="advanced-list" id="spawnlist" displayItems="6" vertical="optional" horizontal="optional" valign="center" width="100%" visibleToMouse="true"> 
+                                </control>
+                            </panel>
+                            <panel height="4px" />
+                            <panel height="*" style="sf-panel">
+                                <!-- TACTICAL MAP -->
+                            </panel>
+                        </panel>
+                    </control>
+                    <control id="tab_loadout" name="nifty-tab" caption="Ship &amp; Loadout">
+                        <panel childLayout="vertical">
+                            <panel height="*" style="sf-panel" childLayout="vertical">
+                                <control name="label" text="Primary Weapons" align="left" />
+                                <panel height="4px" />
+                                <!-- PRIMARY WEAPONSLOTS FOR WEAPONSELECTION -->
+                            </panel>
+                            <panel height="4px" />
+                            <panel height="*" childLayout="horizontal">
+                                <panel width="*" height="100%" style="sf-panel" childLayout="vertical">
+                                    <control name="label" text="Secondary Weapons" align="left" />
+                                    <panel height="4px" />
+                                    <!-- SECONDARY WEAPONSLOTS FOR WEAPONSELECTION -->
+                                </panel>
+                                <panel width="4px" />
+                                <panel width="30%" height="100%" style="sf-panel" childLayout="vertical">
+                                    <control name="label" text="Perk" align="left" />
+                                    <panel height="4px" />
+                                    <!-- PERK SELECTION -->
+                                </panel>
+                            </panel>
+                            <panel height="4px" />
+                            <panel height="*" style="sf-panel" childLayout="vertical">
+                                <control name="label" text="Item description" align="left" />
+                                <panel height="4px" />
+                                <!-- ITEM DESCRIPTION -->
+                            </panel>
+                        </panel>
+                    </control>
+                    <control id="tab_flight" name="nifty-tab" caption="Faction &amp; Flight">
+                        <panel childLayout="vertical">
+                            <panel height="*" style="sf-panel" childLayout="vertical">
+                                <control name="label" text="Select Faction" align="left" />
+                                <panel height="4px" />
+                                <control name="advanced-list" id="factionlist" displayItems="6" vertical="optional" horizontal="optional" valign="center" width="100%" visibleToMouse="true"> 
+                                </control>
+                            </panel>
+                            <panel height="4px" />
+                            <panel height="*" childLayout="horizontal">
+                                <panel width="*" height="100%" style="sf-panel" childLayout="vertical">
+                                    <control name="label" text="Select Flight" align="left" />
+                                    <panel height="4px" />
+                                    <control name="advanced-list" id="flightlist" displayItems="6" vertical="optional" horizontal="optional" valign="center" width="100%" visibleToMouse="true"> 
+                                    </control>
+                                </panel>
+                                <panel width="4px" />
+                                <panel width="50%" height="100%" style="sf-panel" childLayout="vertical">
+                                    <control name="label" text="Select Ship" align="left" />
+                                    <panel height="4px" />
+                                    <control name="advanced-list" id="clientlist" height="*" vertical="optional" horizontal="optional" valign="center" width="100%" visibleToMouse="true"> 
+                                    </control>
+                                    <panel height="4px" />
+                                    <control name="button" id="selectclientbutton" align="right" label="Select Ship" visibleToMouse="true">
+                                        <interact onClick="selectClient()"/>
+                                    </control>
+                                </panel>
+                            </panel>
+                        </panel>
+                    </control>
+                </control>
+            </panel>
+            <panel height="40px" width="50%" childLayout="horizontal" align="center" padding="4px,0px,4px,0px">
+                <effect>
+                    <onStartScreen name="move" mode="in" direction="bottom" length="300" startDelay="0" inherit="true"/>
+                    <onEndScreen name="move" mode="out" direction="bottom" length="300" startDelay="0" inherit="true"/>
+                </effect>        
+                <panel height="100%" width="*" childLayout="center" padding="0px,2px,0px,0px">
+                    <control name="button" label="Leave Game" id="backbutton" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="leave()"/>
+                    </control>
+                </panel>
+                <panel height="100%" width="*" childLayout="center" padding="0px,2px,0px,2px">
+                    <control name="button" label="Spectate" id="spectatebutton" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="spectate()"/>
+                    </control>
+                </panel>
+                <panel height="100%" width="*" childLayout="center" padding="0px,0px,0px,2px">
+                    <control name="button" label="Deploy" id="deploybutton" valign="center" width="100%" visibleToMouse="true"> 
+                        <interact onClick="deploy()"/>
+                    </control>
+                </panel>
+            </panel>
+        </layer>
+    </screen>
+    
+    <screen id="test">
+        <layer childLayout="vertical">
+            <effect>
+                <onShow name="fade" mode="in" length="300" startDelay="0" inherit="true"/>
+                <onHide name="fade" mode="out" length="300" startDelay="0" inherit="true"/>
+            </effect>
+
+        </layer>
+    </screen>
+
+    <!-- /////////////////////////////////////////////////////////////////// -->
+    <!-- // INGAME SCREEN ////////////////////////////////////////////////// -->
+    <!-- /////////////////////////////////////////////////////////////////// -->
+
+    <screen id="ingame" controller="de.jlab.spacefight.ui.ingame.IngameController">
+        <layer childLayout="vertical">
+            <effect>
+                <onShow name="move" mode="in" direction="top" length="300" startDelay="0" inherit="true"/>
+                <onHide name="move" mode="out" direction="top" length="300" startDelay="0" inherit="true"/>
+            </effect>  
+            <control id="console" name="nifty-console" lines="15" align="center" valign="center">
+
+            </control>
+        </layer>
+        <layer childLayout="vertical">
+            <effect>
+                <onShow name="fade" mode="in" length="300" startDelay="0" inherit="true"/>
+                <onHide name="fade" mode="out" length="300" startDelay="0" inherit="true"/>
+            </effect>
+            <panel height="10%" />
+            <panel width="50%" height="80%" childLayout="center" align="center">
+                <control id="scoreboard" name="scrollPanel" horizontal="false" height="100%" width="100%">
+                    <panel id="factions" childLayout="vertical" />
+                </control>                
+            </panel>
+            <panel height="10%" />
+        </layer>
+    </screen>
+  
+    <!-- /////////////////////////////////////////////////////////////////// -->
+    <!-- // FAKE SCREENS/TRANSITION SCREENS //////////////////////////////// -->
+    <!-- /////////////////////////////////////////////////////////////////// -->
+  
+    <screen id="end">
+        <layer/>
+    </screen>
+</nifty>

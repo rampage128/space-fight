@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : jousting.xml
+    Created on : 23. April 2012, 18:49
+    Author     : rampage
+    Description:
+        First mission file describing a Mission where two destroyers are closing in
+        on each other supported by bombers, fighters and interceptors.
+-->
+
+<mission>
+    <name>Test: Formation</name>
+    <level>sol7</level>
+    <factions>
+        <faction>
+            <id>1</id>
+            <name>Formation</name>
+            <flights>
+                <flight>
+                    <id>testobject</id>
+                    <type>object</type>
+                    <objects>
+                        <object>
+                            <id>destroyer_2</id>
+                            <type>rscd-tetsubo</type>
+                        </object>
+                    </objects>
+                    <spawn>
+                        <position>[2000.0, 0.0, -5000.0]</position>
+                        <facing>[2000.0, 0.0, 0.0]</facing>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>move</type>
+                            <position>[2000.0, 0.0, 0.0]</position>
+                        </task>
+                    </tasks>
+                </flight>
+                <flight>
+                    <id>bombers_1</id>
+                    <type>client</type>
+                    <name>echelon</name>
+                    <defaultship>rapier</defaultship>
+                    <formation>echelon</formation>
+                    <spawn>
+                        <object>destroyer_2</object>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>move</type>
+                            <position>[3000.0, 0.0, 30]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[3000.0, 0.0, -300]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[0.0, 0.0, -300]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[3000.0, 0.0, 30]</position>
+                        </task>
+                    </tasks>
+                </flight>
+                <flight>
+                    <id>formation_2</id>
+                    <type>client</type>
+                    <name>line</name>
+                    <defaultship>predator</defaultship>
+                    <formation>line</formation>
+                    <spawn>
+                        <object>destroyer_2</object>
+                    </spawn>
+                    <tasks>
+                        <task>
+                            <type>move</type>
+                            <position>[1000.0, 0.0, 30]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[1000.0, 0.0, -300]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[0.0, 0.0, -300]</position>
+                        </task>
+                        <task>
+                            <type>move</type>
+                            <position>[1000.0, 0.0, 30]</position>
+                        </task>
+                    </tasks>
+                </flight>
+            </flights>
+        </faction>
+        <faction>
+            <id>2</id>
+            <name>Dummy</name>
+       </faction>
+    </factions>
+</mission>

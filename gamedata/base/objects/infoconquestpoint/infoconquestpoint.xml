@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : infoconquestpoint.xml
+    Created on : 29. Mai 2012, 14:35
+    Author     : rampage
+    Description:
+        Purpose of the document follows.
+-->
+
+<object>
+    <type>conquestpoint</type>
+    <script>infoconquestpoint.js</script>
+    <alwaysvisible>true</alwaysvisible>
+    <controls>
+        <sensor>
+            <maxrange>3000</maxrange>
+        </sensor>
+    </controls>
+</object>

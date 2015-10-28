@@ -1,0 +1,56 @@
+Story
+
+Die Menschheit hat die Erde vollständig übervölkert und hat keine weitere Chance
+so auf der Erde weiterzuleben. Viele Länder haben sich inzwischen zusammengeschlossen
+um im Wettbewerb um die verbleibenden Ressourcen nicht auf der Strecke zu bleiben.
+Auf der Suche nach einem Ausweg begann das Wettrennen um den Weltraum erneut. Die
+Staaten der Erde entwickelten immer neuere und bessere Technologien zur Kolonialisierung
+des Weltraums in der Hoffnung dort unerschöpfliche Ressourcen und eventuell fremdes
+Leben für ein offenes und lukratives Handelsnetz zu erschließen.
+
+Nach Jahrhunderten der Erkundung und Kolonialisierung hat man allerdings festgestellt,
+dass der Kalte leere Raum nicht viele menschenfreundliche Bedingungen bietet. So kämpfen
+die verschiedenen Fraktionen nun verbittert um die wenigen Ressourcenreichen gebiete,
+die der Weltraum zu bieten hat.
+
+Fraktionen:
+
+UA - United Federation of Amerika
+
+Zusammenschluss aus Nord- und Südamerika und allen umliegenden Ländern/Staaten des Kontinents.
+Vertritt die Demokratie und repräsentiert die selbsternannte "Gerechtigkeit"
+Großmacht, Militaristisch, in Flotten organisiert
+
+EN - European Nation Alliance
+
+Zusammenschluss des europäischen Kontinents.
+Tollerant, steht zwischen den Mächten und hat sich im Verlaufe der Geschichte
+als Neutrales element von allen abgekapselt. Ist "Eroberungsziel" aller anderen Fraktionen,
+da eine Eroberung dieser Truppen das Gleichgewicht kippen würde.
+Großmacht, Militaristisch, in Flotten organisiert, sehr bürokratisch
+
+CU - Great Communistic Union (OSTBLOCK)
+
+Zusammenschluss von west und mittel Asien.
+Nationalistische Vereinigung, die ihre Lebensziele und Ideale über alle anderen
+stellt und dies (auch mit Hilfe von Gewalt) durchsetzen will.
+Großmacht, Militaristisch, Kommunistisch, in Flotten organisiert
+
+RS - Republik of the Sun (ASIEN)
+
+Zusammenschluss von Süd- Ostasien.
+Großmacht, Militaristisch, Kommunistisch, in Schwärmen organisiert
+
+IO - Imperium of the Orient
+
+Repräsentiert den ausgedehnten "Orient".
+Handelsimperium, deren Parteien aber nicht im Einklang sind. 
+Großmacht, Händler, in Gruppen organisiert.
+
+CH - Cradle of Humankind (AFRIKA) - Fanatische Guerilla Gruppe (SEKTENHAFT?)
+
+Repräsentiert die "Überreste" Afrikas.
+Möchte zur Vernunft auffordern, da Afrika durch den Irrsinn des Ressourcen-Krieges auf 
+der Erde großteils zerstört wurde. Sie machen alle verantwortlich, sehen sich
+aber als die "Wiege der Menschheit" deren Macht alles vereinen soll.
+Guerilla Splittergruppe, Sektenhaft, in kleinen Gruppen organisiert

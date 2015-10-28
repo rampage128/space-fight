@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : repair.xml
+    Created on : 29. Mai 2012, 15:13
+    Author     : rampage
+    Description:
+        Description file for perk.
+-->
+
+<perk>
+    <name>EMP</name>
+    <type>once</type>
+    <script>emp.js</script>
+    <cooldown>5</cooldown>
+    <properties>
+        <time>10</time>
+        <selftime>3</selftime>
+        <range>500</range>
+    </properties>
+</perk>

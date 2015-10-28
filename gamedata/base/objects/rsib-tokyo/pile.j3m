@@ -1,0 +1,9 @@
+Material MyMaterial : Common/MatDefs/Light/Lighting.j3md {
+    MaterialParameters {
+        ParallaxHeight : 0.05
+        Shininess : 64.0
+    }
+    AdditionalRenderState {
+
+    }
+}

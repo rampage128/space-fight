@@ -1,0 +1,16 @@
+Material My Material : Common/MatDefs/Misc/Unshaded.j3md {
+     MaterialParameters {
+        GlowMap : effects/trail.png
+        GlowColor : 1 1 1.0 1.0
+        ColorMap : effects/trail.png
+        Color : 1.0 1.0 1.0 1.0
+     }
+    AdditionalRenderState {
+      PointSprite Off
+      Blend AlphaAdditive
+      DepthWrite On
+      DepthTest On
+      ColorWrite On
+      FaceCull Off
+    }
+}

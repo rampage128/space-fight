@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty-controls>
+    <controlDefinition name="killlist-line">
+        <panel childLayout="horizontal" align="right">
+            <!--<panel width="*" height="23px" />-->
+            <control id="#kill-line-origin" name="label" text="origin" align="left" textHAlign="left" width="*" height="23px" />
+            <panel width="4px" height="23px" />
+            <control id="#kill-line-damage" name="label" text="[damage]" align="left" textHAlign="center" width="*" height="23px" />
+            <panel width="4px" height="23px" />
+            <control id="#kill-line-target" name="label" text="target" align="left" textHAlign="left" width="*" height="23px" />
+        </panel>
+    </controlDefinition>
+    
+    <controlDefinition name="scoreboard-line">
+        <panel childLayout="horizontal">
+            <control id="#scoreboard-line-name" name="label" text="name" textHAlign="left" width="*" height="23px" />
+            <panel width="4px" height="23px" />
+            <control id="#scoreboard-line-kills" name="label" text="0" textHAlign="right" width="15%" height="23px" />
+            <panel width="4px" height="23px" />
+            <control id="#scoreboard-line-deaths" name="label" text="0" textHAlign="right" width="15%" height="23px" />
+            <panel width="4px" height="23px" />
+            <control id="#scoreboard-line-score" name="label" text="0" textHAlign="right" width="20%" height="23px" />
+        </panel>
+    </controlDefinition>
+</nifty-controls>

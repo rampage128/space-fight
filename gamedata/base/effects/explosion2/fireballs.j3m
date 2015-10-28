@@ -1,0 +1,9 @@
+Material My Material : Common/MatDefs/Misc/Particle.j3md {
+     MaterialParameters {
+        DepthTexture : Flip effects/explosion2/explosionstreak03.png
+        Texture : Flip effects/explosion2/explosionstreak03.png
+        PointSprite : true
+     }
+    AdditionalRenderState {
+    }
+}
