@@ -25,9 +25,9 @@ public final class VectorDebugItem extends AbstractDebugItem {
         Geometry arrowNode = (Geometry)super.getValue();
         if ( arrowNode == null ) {
             Arrow arrow = new Arrow(Vector3f.UNIT_Z);
-            arrow.setLineWidth(4);
             arrowNode = SpaceDebugger.getInstance().createDebugShape(arrow, color, false);
             arrowNode.setQueueBucket(Bucket.Translucent);
+            arrowNode.getMaterial().getAdditionalRenderState().setLineWidth(1f);
             super.setValue(arrowNode);
         }
         arrowNode.setLocalTranslation(origin);
