@@ -17,6 +17,7 @@ import de.jlab.spacefight.SpaceAppState;
 import de.jlab.spacefight.basic.ObjectInfoControl;
 import de.jlab.spacefight.input.ShipInput;
 import de.jlab.spacefight.mission.structures.DistressCall;
+import de.jlab.spacefight.mission.structures.Task;
 import de.jlab.spacefight.systems.PhysicsControl;
 import de.jlab.spacefight.systems.flight.FlightControl;
 import de.jlab.spacefight.systems.perks.PerkControl;
@@ -180,7 +181,10 @@ public class PlayerControl extends AbstractClientControl implements AnalogListen
                         //flightControl.setElevator(0);
                     //}
                 } else if (ShipInput.STEERING_DEBUG.toString().equalsIgnoreCase(name)) {
-                    flightControl.turnTo(getSpatial().getControl(ObjectInfoControl.class).getCurrentTask().getPosition(), tpf);
+                    Task currentTask = getSpatial().getControl(ObjectInfoControl.class).getCurrentTask();
+                    if (currentTask != null) {
+                        flightControl.turnTo(getSpatial().getControl(ObjectInfoControl.class).getCurrentTask().getPosition(), tpf);
+                    }
                 }                
             } else {
                 if (ShipInput.RUDDERLEFT.toString().equalsIgnoreCase(name)) {
