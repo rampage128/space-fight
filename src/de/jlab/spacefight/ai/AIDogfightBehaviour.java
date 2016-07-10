@@ -4,10 +4,15 @@
  */
 package de.jlab.spacefight.ai;
 
+import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector3f;
 import de.jlab.spacefight.basic.ChanceCalculator;
+import de.jlab.spacefight.basic.ObjectInfoControl;
+import de.jlab.spacefight.debug.DebugContext;
+import de.jlab.spacefight.debug.SpaceDebugger;
 import de.jlab.spacefight.mission.structures.DistressCall;
 import de.jlab.spacefight.mission.structures.Task;
+import de.jlab.spacefight.weapon.AbstractWeaponControl;
 
 /**
  *
@@ -62,6 +67,7 @@ public class AIDogfightBehaviour extends AIBehaviour {
                 setProximityDistance(30);
                 //turnToEnemy(tpf);
                 if ( followEnemy(tpf) ) {
+                    SpaceDebugger.getInstance().removeItem(DebugContext.AI, "v_" + this.hashCode());
                     setState(STATE_EVADE);
                 }
 /*                
@@ -77,6 +83,7 @@ public class AIDogfightBehaviour extends AIBehaviour {
                 setProximityDistance(30);
                 _evasionTime += tpf;
                 if ( evadeEnemy(tpf) || _evasionTime >= VAR_EVASIONTIMEOUT ){
+                    SpaceDebugger.getInstance().removeItem(DebugContext.AI, "v_" + this.hashCode());
                     setState(STATE_ATTACK);
                     _evadeVector = null;
                     _evasionTime = 0;
@@ -97,13 +104,27 @@ public class AIDogfightBehaviour extends AIBehaviour {
        
     private boolean evadeEnemy(float tpf) {
         if ( _evadeVector == null )
-            _evadeVector = getAI().getSensors().getTargetEvadeVector().mult(getAI().getFlightControl().getForwardVelocity() * 3 + getAI().getWeapons().getTarget().getObject().getSize() * 2);
+            _evadeVector = getAI().getSensors().getTargetEvadeVector().mult(getAI().getFlightControl().getForwardVelocity() * 3 + getAI().getWeapons().getTarget().getObject().getSize() * 4);
         //getAI().turnTo(_evadeVector, tpf);
+        
+        SpaceDebugger.getInstance().setVector(DebugContext.AI, "v_" + this.hashCode(), getAI().getSpatial().getWorldTranslation(), _evadeVector, ColorRGBA.White);
+        
         return getAI().getFlightControl().moveTo(_evadeVector, getAI().getObjectInfo().getSize() * 3, 1.0f, 0.0f, tpf);
     }
     
-    private boolean followEnemy(float tpf) {
-        return getAI().getFlightControl().moveTo(getAI().getWeapons().getTarget().getAimAtWorld(getAI().getObjectInfo(), getAI().getWeapons().getPrimarySlot().getWeapon()), Math.max(50, getAI().getWeapons().getTarget().getObject().getSize() * 0.75f + getAI().getObjectInfo().getSize() * 0.75f), getAI().getWeapons().getTarget().getObject().getUpside(), 1.0f, getAI().getWeapons().getTarget().getObject().getLinearVelocity().length(), tpf);
+    private boolean followEnemy(float tpf) {           
+        ObjectInfoControl myself = getAI().getObjectInfo();
+        AbstractWeaponControl primaryWeapon = getAI().getWeapons().getPrimarySlot().getWeapon();
+        Vector3f targetLocation = getAI().getWeapons().getTarget().getAimAtWorld(myself, primaryWeapon);
+        
+        float tolerance = Math.max(50, getAI().getWeapons().getTarget().getObject().getSize() * 4 + getAI().getObjectInfo().getSize() * 0.75f);
+        Vector3f up = getAI().getWeapons().getTarget().getObject().getUpside();
+        float throttle = 1.0f;
+        float otherSpeed = getAI().getWeapons().getTarget().getObject().getLinearVelocity().length();
+        
+        SpaceDebugger.getInstance().setVector(DebugContext.AI, "v_" + this.hashCode(), getAI().getSpatial().getWorldTranslation(), targetLocation.subtract(getAI().getSpatial().getWorldTranslation()), ColorRGBA.Red);
+        
+        return getAI().getFlightControl().moveTo(targetLocation, tolerance, up, throttle, otherSpeed, tpf);
     }
     
 }
