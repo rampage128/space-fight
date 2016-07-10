@@ -1,3 +1,4 @@
+/*
 package de.jlab.spacefight.ui.controls;
 
 import java.util.Comparator;
@@ -30,9 +31,6 @@ import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.tools.SizeValue;
 import de.lessvoid.xml.xpp3.Attributes;
 
-/**
- * deprecated Please use {@link de.lessvoid.nifty.controls.ListBox} when accessing NiftyControls.
- */
 public class AdvancedList<T> extends AbstractController implements ListBox<T>, ListBoxView<T> {
   private Logger log = Logger.getLogger(AdvancedList.class.getName());
   private AdvancedListImpl<T> listBoxImpl = new AdvancedListImpl<T>(this);
@@ -680,3 +678,4 @@ public class AdvancedList<T> extends AbstractController implements ListBox<T>, L
     optional
   }
 }
+*/

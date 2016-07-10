@@ -187,14 +187,16 @@ public abstract class AbstractMission {
         }
         
         // ADD KILLS TO ORIGIN
-        AbstractClientControl originControl = kill.getOrigin().getSpatial().getControl(AbstractClientControl.class);
-        if (originControl != null) {
-            originControl.addKill(kill);
-            originControl.addScore(100);
-            Faction faction = kill.getOrigin().getFaction();
-            if (faction != null) {
-                faction.addKill(kill);
-                faction.addScore(100);
+        if (kill.getOrigin() != null) {
+            AbstractClientControl originControl = kill.getOrigin().getSpatial().getControl(AbstractClientControl.class);
+            if (originControl != null) {
+                originControl.addKill(kill);
+                originControl.addScore(100);
+                Faction faction = kill.getOrigin().getFaction();
+                if (faction != null) {
+                    faction.addKill(kill);
+                    faction.addScore(100);
+                }
             }
         }
         

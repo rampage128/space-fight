@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nifty-controls>
-  <controlDefinition name="advanced-list" style="nifty-listbox" childRootId="#child-root" controller="de.jlab.spacefight.ui.controls.AdvancedList">
+  <controlDefinition name="advanced-list" style="nifty-listbox" childRootId="#child-root" controller="de.jlab.spacefight.ui.controls.advancedlist.AdvancedListControl">
     <panel childLayout="vertical">
       <panel id="#scrollpanel" childLayout="horizontal">
         <panel id="#panel" childLayout="absolute" childClip="true" style="#scrollpanel" controller="de.lessvoid.nifty.controls.listbox.ListBoxPanel" inputMapping="de.lessvoid.nifty.input.mapping.MenuInputMapping">

@@ -104,6 +104,11 @@ public class PhysicsControl extends RigidBodyControl implements XMLLoadable {
         return control;
     }
     
+    @Override   
+    public Object jmeClone() {
+        return this.cloneForSpatial(this.spatial);
+    }
+    
     private void computeCollision() {
         Node object = (Node)spatial;
         

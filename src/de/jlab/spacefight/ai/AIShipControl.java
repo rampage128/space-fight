@@ -13,7 +13,6 @@ import de.jlab.spacefight.AbstractClientControl;
 import de.jlab.spacefight.SpaceAppState;
 import de.jlab.spacefight.ai.tasks.DistressTask;
 import de.jlab.spacefight.basic.ObjectInfoControl;
-import de.jlab.spacefight.mission.structures.DistressCall;
 import de.jlab.spacefight.mission.structures.Flight;
 import de.jlab.spacefight.mission.structures.Task;
 import de.jlab.spacefight.systems.PhysicsControl;

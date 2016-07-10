@@ -1,6 +1,5 @@
 Material My Material : Common/MatDefs/Light/Lighting.j3md {
      MaterialParameters {
-        Minnaert : true
         Diffuse : 0.4 0.4 1 0.5
         UseMaterialColors : true
         EnvMapAsSphereMap : false

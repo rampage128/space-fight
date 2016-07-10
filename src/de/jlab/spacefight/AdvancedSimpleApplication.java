@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) 2009-2010 jMonkeyEngine
  * All rights reserved.
@@ -29,11 +30,13 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+
 package de.jlab.spacefight;
 
 import com.jme3.app.Application;
 import com.jme3.app.DebugKeysAppState;
 import com.jme3.app.FlyCamAppState;
+import com.jme3.app.SimpleApplication;
 import com.jme3.app.StatsAppState;
 import com.jme3.app.state.AppState;
 import com.jme3.font.BitmapFont;
@@ -71,7 +74,8 @@ import com.jme3.system.JmeSystem;
  * 
  * @modified by rampage
  */
-public abstract class AdvancedSimpleApplication extends Application {
+
+public abstract class AdvancedSimpleApplication extends SimpleApplication {
 
     public static final String INPUT_MAPPING_EXIT = "SIMPLEAPP_Exit";
     public static final String INPUT_MAPPING_CAMERA_POS = DebugKeysAppState.INPUT_MAPPING_CAMERA_POS;

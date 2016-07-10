@@ -9,8 +9,9 @@ import de.jlab.spacefight.network.ChatListener;
 import de.jlab.spacefight.network.NetworkAppState;
 import de.jlab.spacefight.player.Player;
 import de.jlab.spacefight.ui.TabController;
-import de.jlab.spacefight.ui.controls.AdvancedList;
+
 import de.lessvoid.nifty.Nifty;
+import de.lessvoid.nifty.controls.ListBox;
 import de.lessvoid.nifty.controls.TextField;
 import de.lessvoid.nifty.elements.Element;
 import de.lessvoid.nifty.screen.Screen;
@@ -26,7 +27,7 @@ public class MultiplayerLobby implements ScreenController, ChatListener {
     private Screen screen;
     
     private TabController tabs;
-    private AdvancedList chatlist;
+    private ListBox chatlist;
     
     public MultiplayerLobby() {}
     
@@ -39,9 +40,9 @@ public class MultiplayerLobby implements ScreenController, ChatListener {
         this.tabs.addTab("button_missions", "tab_missions");
         this.tabs.addTab("button_options", "tab_options");
         
-        this.chatlist = screen.findNiftyControl("chatlist", AdvancedList.class);
+        this.chatlist = screen.findNiftyControl("chatlist", ListBox.class);
         
-        Element startButton = this.screen.findElementByName("startbutton");
+        Element startButton = this.screen.findElementById("startbutton");
         if (NetworkAppState.isClient(Game.get())) {
             startButton.disable();
         } else {

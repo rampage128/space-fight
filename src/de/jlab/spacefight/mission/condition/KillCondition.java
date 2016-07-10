@@ -36,13 +36,11 @@ public class KillCondition implements MissionCondition {
     }
 
     public void onKill(Kill kill, AbstractMission mission) {
-        //ObjectInfoControl originInfo = kill.getOrigin().getControl(ObjectInfoControl.class);
-        //ObjectInfoControl targetInfo = kill.getTarget().getControl(ObjectInfoControl.class);
-        if ( kill.getOrigin().getClient() && kill.getTarget().getClient() && kill.getOrigin().getFaction().getId() != kill.getTarget().getFaction().getId() ) {
+        if (kill.getOrigin() != null && kill.getOrigin().getClient() && kill.getTarget().getClient() && kill.getOrigin().getFaction().getId() != kill.getTarget().getFaction().getId()) {
             Faction faction = this.killMap.get(kill.getOrigin().getFaction().getId());
-            if ( faction != null ) {
+            if (faction != null) {
                 //faction.addKill(kill);
-                if ( faction.getKillCount() > this.leaderKills ) {
+                if (faction.getKillCount() > this.leaderKills) {
                     this.leaderKills = faction.getKillCount();
                     this.leader = faction;
                 }

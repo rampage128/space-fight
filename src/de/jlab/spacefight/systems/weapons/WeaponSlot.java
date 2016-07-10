@@ -11,7 +11,6 @@ import de.jlab.spacefight.SpaceAppState;
 import de.jlab.spacefight.basic.ObjectInfoControl;
 import de.jlab.spacefight.systems.sensors.TargetInformation;
 import de.jlab.spacefight.weapon.AbstractWeaponControl;
-import de.lessvoid.nifty.tools.Color;
 
 /**
  *

@@ -5,14 +5,8 @@ Material MyMaterial : Common/MatDefs/Light/Lighting.j3md {
         SpecularMap : Flip level/sol7/earth_s.jpg
         UseMaterialColors : false
         Shininess : 0.0
-        Minnaert : false
         VertexLighting : false
-        UseAlpha : false
-        LATC : false
-        HighQuality : false
-        VTangent : false
         HardwareShadows : true
-        WardIso : false
         GlowMap : Flip level/sol7/earth_g.jpg
         ShadowIntensity : 100.0
     }

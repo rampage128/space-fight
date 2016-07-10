@@ -5,8 +5,8 @@
 package de.jlab.spacefight.ui.screens;
 
 import de.jlab.spacefight.Game;
-import de.jlab.spacefight.ui.controls.AdvancedList;
 import de.lessvoid.nifty.Nifty;
+import de.lessvoid.nifty.controls.ListBox;
 import de.lessvoid.nifty.controls.TextField;
 import de.lessvoid.nifty.elements.Element;
 import de.lessvoid.nifty.screen.Screen;
@@ -24,8 +24,8 @@ public class ServerBrowser implements ScreenController {
     private Nifty nifty;
     private Screen screen;
     
-    private AdvancedList serverlist;
-    private AdvancedList playerlist;
+    private ListBox serverlist;
+    private ListBox playerlist;
     private Element addServerPopup;
     
     public ServerBrowser() {}
@@ -40,8 +40,8 @@ public class ServerBrowser implements ScreenController {
     public void onStartScreen() {
         Game.get().getInputManager().setCursorVisible(true);
                
-        this.serverlist   = screen.findNiftyControl("serverlist", AdvancedList.class);
-        this.playerlist   = screen.findNiftyControl("playerlist", AdvancedList.class);
+        this.serverlist   = screen.findNiftyControl("serverlist", ListBox.class);
+        this.playerlist   = screen.findNiftyControl("playerlist", ListBox.class);
         
         loadServerList();
     }

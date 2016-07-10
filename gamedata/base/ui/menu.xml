@@ -216,7 +216,7 @@
                     <onEndScreen name="fade" start="#ff" end="#00" length="300" startDelay="0" inherit="true"/>
                 </effect> 
                 <panel height="100%" childLayout="vertical">
-                    <control name="advanced-list" displayItems="10" vertical="optional" horizontal="optional" id="missionlist" valign="center" width="100%" visibleToMouse="true"> 
+                    <control name="listBox" displayItems="10" vertical="optional" horizontal="optional" id="missionlist" valign="center" width="200px" height="200px" visibleToMouse="true"> 
                     </control>
                 </panel>
             </panel>

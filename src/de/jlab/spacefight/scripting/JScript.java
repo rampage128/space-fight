@@ -36,7 +36,7 @@ public class JScript extends AbstractScript {
 			this.scriptHost.eval(this.getCode());
                         this.isCompiled(true);
 		} catch ( ScriptException e ) {
-			throw new RuntimeException(e.getMessage() + "in Script " + this.getName(), e);
+			throw new RuntimeException(e.getMessage() + " in Script " + this.getName(), e);
 		}
 	}
 

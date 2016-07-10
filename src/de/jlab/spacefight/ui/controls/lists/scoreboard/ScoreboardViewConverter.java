@@ -29,22 +29,22 @@ public class ScoreboardViewConverter implements ListBoxViewConverter<ScoreboardM
      */
     @Override
     public final void display(final Element listBoxItem, final ScoreboardModel item) {
-        final Element nameText = listBoxItem.findElementByName(SCOREBOARD_LINE_NAME);
+        final Element nameText = listBoxItem.findElementById(SCOREBOARD_LINE_NAME);
         final TextRenderer nameTextRenderer = nameText.getRenderer(TextRenderer.class);
         //int originWidth = ((originTextRenderer.getFont() == null) ? 0 : originTextRenderer.getFont().getWidth(item.getOrigin()));
         //originText.setWidth(originWidth);
         
-        final Element killsText = listBoxItem.findElementByName(SCOREBOARD_LINE_KILLS);
+        final Element killsText = listBoxItem.findElementById(SCOREBOARD_LINE_KILLS);
         final TextRenderer killsTextRenderer = killsText.getRenderer(TextRenderer.class);
         //int damageWidth = ((damageTextRenderer.getFont() == null) ? 0 : damageTextRenderer.getFont().getWidth(item.getDamage()));
         //damageText.setWidth(damageWidth);
         
-        final Element deathsText = listBoxItem.findElementByName(SCOREBOARD_LINE_DEATHS);
+        final Element deathsText = listBoxItem.findElementById(SCOREBOARD_LINE_DEATHS);
         final TextRenderer deathsTextRenderer = deathsText.getRenderer(TextRenderer.class);
         //int targetWidth = ((targetTextRenderer.getFont() == null) ? 0 : targetTextRenderer.getFont().getWidth(item.getTarget()));
         //targetText.setWidth(targetWidth);
         
-        final Element scoreText = listBoxItem.findElementByName(SCOREBOARD_LINE_SCORE);
+        final Element scoreText = listBoxItem.findElementById(SCOREBOARD_LINE_SCORE);
         final TextRenderer scoreTextRenderer = scoreText.getRenderer(TextRenderer.class);
         
         if (item != null) {
@@ -66,22 +66,22 @@ public class ScoreboardViewConverter implements ListBoxViewConverter<ScoreboardM
      */
     @Override
     public final int getWidth(final Element listBoxItem, final ScoreboardModel item) {
-        final Element nameText = listBoxItem.findElementByName(SCOREBOARD_LINE_NAME);
+        final Element nameText = listBoxItem.findElementById(SCOREBOARD_LINE_NAME);
         final TextRenderer nameTextRenderer = nameText.getRenderer(TextRenderer.class);
         int nameWidth = ((nameTextRenderer.getFont() == null) ? 0 : nameTextRenderer.getFont().getWidth(item.getName()));
         //originText.setWidth(originWidth);
         
-        final Element killsText = listBoxItem.findElementByName(SCOREBOARD_LINE_KILLS);
+        final Element killsText = listBoxItem.findElementById(SCOREBOARD_LINE_KILLS);
         final TextRenderer killsTextRenderer = killsText.getRenderer(TextRenderer.class);
         int killWidth = ((killsTextRenderer.getFont() == null) ? 0 : killsTextRenderer.getFont().getWidth(Integer.toString(item.getKills())));
         //damageText.setWidth(damageWidth);
         
-        final Element deathsText = listBoxItem.findElementByName(SCOREBOARD_LINE_DEATHS);
+        final Element deathsText = listBoxItem.findElementById(SCOREBOARD_LINE_DEATHS);
         final TextRenderer deathsTextRenderer = deathsText.getRenderer(TextRenderer.class);
         int deathsWidth = ((deathsTextRenderer.getFont() == null) ? 0 : deathsTextRenderer.getFont().getWidth(Integer.toString(item.getDeaths())));
         //targetText.setWidth(targetWidth);
         
-        final Element scoreText = listBoxItem.findElementByName(SCOREBOARD_LINE_SCORE);
+        final Element scoreText = listBoxItem.findElementById(SCOREBOARD_LINE_SCORE);
         final TextRenderer scoreTextRenderer = scoreText.getRenderer(TextRenderer.class);
         int scoreWidth = ((scoreTextRenderer.getFont() == null) ? 0 : scoreTextRenderer.getFont().getWidth(Integer.toString(item.getScore())));
         

@@ -1,3 +1,4 @@
 .svn
+.git
 hs_err_pid*.log
 build/

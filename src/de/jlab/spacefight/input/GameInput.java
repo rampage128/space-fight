@@ -11,8 +11,10 @@ package de.jlab.spacefight.input;
 public enum GameInput implements DisplayableEnum.Display {
     CONSOLE,
     MENU,
-    SCOREBOARD;
+    SCOREBOARD,
+    STATS;
     
+    @Override
     public String getDisplayValue() {
         return this.toString();
     }

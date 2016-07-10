@@ -16,7 +16,7 @@ import de.jlab.spacefight.systems.perks.PerkControl;
 import de.jlab.spacefight.systems.weapons.WeaponSlot;
 import de.jlab.spacefight.systems.weapons.WeaponSystemControl;
 import de.jlab.spacefight.ui.TabController;
-import de.jlab.spacefight.ui.controls.AdvancedList;
+
 import de.jlab.spacefight.ui.controls.DropDownValue;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.NiftyEventSubscriber;
@@ -62,8 +62,8 @@ public class SpawnScreen implements ScreenController {
     //private TabControl tabFlight;
        
     // LOADOUT
-    private AdvancedList<WeaponSlot> slotlist;
-    private AdvancedList<String> itemlist;
+    private ListBox<WeaponSlot> slotlist;
+    private ListBox<String> itemlist;
     private DropDown<DropDownValue> perkSelect;
     private Element selectitemButton;
     
@@ -97,8 +97,8 @@ public class SpawnScreen implements ScreenController {
         this.tabs.addTab("button_loadout", "tab_loadout");
         this.tabs.addTab("button_flight", "tab_flight");
         
-        this.slotlist = screen.findNiftyControl("slotlist", AdvancedList.class);
-        this.itemlist = screen.findNiftyControl("itemlist", AdvancedList.class);
+        this.slotlist = screen.findNiftyControl("slotlist", ListBox.class);
+        this.itemlist = screen.findNiftyControl("itemlist", ListBox.class);
         this.perkSelect = screen.findNiftyControl("perkselect", DropDown.class);
         
         this.deployButton = screen.findElementByName("deploybutton");

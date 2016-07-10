@@ -285,11 +285,17 @@ public final class ObjectInfoControl extends AbstractControl implements XMLLoada
         
     }
 
+    @Override
     public Control cloneForSpatial(Spatial spatial) {
         ObjectInfoControl control = null;
         control = new ObjectInfoControl(this.isClient, this.modelName, this.id);
         control.setSpatial(spatial);
         return control;
+    }
+    
+    @Override
+    public Object jmeClone() {
+        return this.cloneForSpatial(this.getSpatial());
     }
     
     @Override

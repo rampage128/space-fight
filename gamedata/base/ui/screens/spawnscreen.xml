@@ -144,7 +144,7 @@
                         <panel width="50%" height="100%" style="sf-panel" childLayout="vertical">
                             <control name="label" text="Select Ship" align="left" />
                             <panel height="4px" />
-                            <control name="advanced-list" id="clientlist" height="*" vertical="optional" horizontal="optional" valign="center" width="100%" visibleToMouse="true"> 
+                            <control name="advanced-list" id="clientlist" displayItems="6" height="*" vertical="optional" horizontal="optional" valign="center" width="100%" visibleToMouse="true"> 
                             </control>
                             <panel height="4px" />
                             <control name="button" id="selectclientbutton" align="right" label="Select Ship" visibleToMouse="true">

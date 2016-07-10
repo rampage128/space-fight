@@ -71,10 +71,10 @@ public class MissionSelect implements ScreenController {
   public void loadMissionList() {
     ListBox listBox = _screen.findNiftyControl("missionlist", ListBox.class);
     listBox.clear();
-    String[] missionList = Game.get().getGamedataManager().listMissions();
-    if ( missionList != null ) {
-        for ( int i = 0; i < missionList.length; i++ ) {
-            listBox.addItem(missionList[i]);
+    String[] missions = Game.get().getGamedataManager().listMissions();
+    if ( missions != null ) {
+        for (String mission : missions) {
+            listBox.addItem(mission);
         }
     }
     listBox.setHeight(new SizeValue("5"));

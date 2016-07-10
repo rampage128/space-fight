@@ -5,6 +5,7 @@
 package de.jlab.spacefight.weapon;
 
 import com.jme3.bullet.collision.PhysicsCollisionEvent;
+import com.jme3.bullet.collision.shapes.CollisionShape;
 import com.jme3.bullet.collision.shapes.SphereCollisionShape;
 import com.jme3.bullet.control.GhostControl;
 import com.jme3.math.ColorRGBA;
@@ -52,7 +53,7 @@ public class AbstractWeaponControl extends GhostControl implements XMLLoadable, 
     private ObjectInfoControl origin;
     
     private int type = TYPE_ENERGY;
-    
+       
     private float speed;
     private float range;
     private float damage;
@@ -83,6 +84,11 @@ public class AbstractWeaponControl extends GhostControl implements XMLLoadable, 
         this.space = space;
     }
     
+    public AbstractWeaponControl(SpaceAppState space, CollisionShape shape) {
+        super(shape);
+        this.space = space;
+    }
+    
     public void setOrigin(ObjectInfoControl origin) {
         this.origin = origin;        
     }
@@ -93,11 +99,15 @@ public class AbstractWeaponControl extends GhostControl implements XMLLoadable, 
     
     @Override
     public Control cloneForSpatial(Spatial spatial) {
-        AbstractWeaponControl control = new AbstractWeaponControl(space);
+        AbstractWeaponControl control = new AbstractWeaponControl(space, getCollisionShape());
         // GENERAL COLLISION STUFF
-        control.setCollisionShape(getCollisionShape());
-        control.setCollisionGroup(getCollisionGroup());
+        control.setCcdMotionThreshold(getCcdMotionThreshold());
+        control.setCcdSweptSphereRadius(getCcdSweptSphereRadius());
         control.setCollideWithGroups(getCollideWithGroups());
+        control.setCollisionGroup(getCollisionGroup());
+        control.setPhysicsLocation(getPhysicsLocation());
+        control.setPhysicsRotation(getPhysicsRotationMatrix());
+        control.setApplyPhysicsLocal(isApplyPhysicsLocal());
         
         // SET ORIGIN
         control.setOrigin(this.origin);
@@ -127,11 +137,66 @@ public class AbstractWeaponControl extends GhostControl implements XMLLoadable, 
         if (this.script != null) {
             control.script = this.script.clone(control);
         }
-        
-        // SET SPATIAL AND RETURN
-        control.setSpatial(spatial);
+              
         return control;
     }
+       
+    @Override   
+    public Object jmeClone() {
+        AbstractWeaponControl control = new AbstractWeaponControl(space, getCollisionShape());
+        // GENERAL COLLISION STUFF
+        control.setCcdMotionThreshold(getCcdMotionThreshold());
+        control.setCcdSweptSphereRadius(getCcdSweptSphereRadius());
+        control.setCollideWithGroups(getCollideWithGroups());
+        control.setCollisionGroup(getCollisionGroup());
+        control.setPhysicsLocation(getPhysicsLocation());
+        control.setPhysicsRotation(getPhysicsRotationMatrix());
+        control.setApplyPhysicsLocal(isApplyPhysicsLocal());
+        
+        // SET ORIGIN
+        control.setOrigin(this.origin);
+        
+        // COPY BASIC VALUES
+        control.type = type;
+        control.speed = speed;
+        control.range = range;
+        control.damage = damage;
+        control.name = name;
+        
+        // COPY EFFECTS
+        control.blastimpulse = this.blastimpulse;
+        control.muzzleEffect = muzzleEffect;
+        control.muzzleSize = muzzleSize;
+        //control.hitSound = hitSound;
+        control.explosionEffect = explosionEffect;
+        control.explosionSize = explosionSize;
+        
+        // COPY WARHEAD VALUES
+        control.turnRate = turnRate;
+        control.target = this.target;
+        for (Engine engine : this.engines) {
+            control.engines.add(engine.clone());
+        }
+        
+        if (this.script != null) {
+            control.script = this.script.clone(control);
+        }
+              
+        // SET SPATIAL AND RETURN
+        control.setSpatial(this.spatial);
+        return control;
+    }
+        
+    private void logStuff(String caller, AbstractWeaponControl control) {
+        System.out.println(caller + ": " + control + " [" + control.getSpatial() + " / " + control.getObjectId() + "]");
+        StringBuilder stackBuilder = new StringBuilder();
+        StackTraceElement[] stackElements = Thread.currentThread().getStackTrace();
+        for (StackTraceElement stackElement : stackElements) {
+            stackBuilder.append(stackElement.getClassName()).append(".").append(stackElement.getMethodName()).append(" <- ");
+        }
+        System.out.println(stackBuilder.toString());
+        System.out.println("----------------------");
+    }  
         
     //public abstract void updateWeapon(float tpf);
     //public abstract void onDestroy();
@@ -211,7 +276,7 @@ public class AbstractWeaponControl extends GhostControl implements XMLLoadable, 
         }
     }
         
-    public void collide(ObjectInfoControl target, PhysicsCollisionEvent event) {       
+    public void collide(ObjectInfoControl target, PhysicsCollisionEvent event) {
         DamageControl tdc = target.getObjectControl(DamageControl.class);
         Vector3f direction = spatial.getWorldTranslation().subtract(target.getPosition());
         
@@ -246,7 +311,7 @@ public class AbstractWeaponControl extends GhostControl implements XMLLoadable, 
         
         if ( spatial != null ) {
             this.space.destroyObject(spatial);
-        }
+        }       
     }
     
     /* HELPERS */
@@ -385,12 +450,17 @@ public class AbstractWeaponControl extends GhostControl implements XMLLoadable, 
         }
     }
 
+    @Override
     public AbstractWeaponControl getInstance(String id) {
-        AbstractWeaponControl control = this.getSpatial().clone().getControl(AbstractWeaponControl.class);
-        
-        if ( control.getSpatial() != null ) {
-            for (Engine engine : control.engines) {
-                engine.attachTo((Node)control.getSpatial());
+        Spatial newSpatial = this.getSpatial().clone();
+        AbstractWeaponControl originalControl = newSpatial.getControl(AbstractWeaponControl.class);
+        newSpatial.removeControl(originalControl);
+        AbstractWeaponControl newControl = (AbstractWeaponControl)originalControl.cloneForSpatial(newSpatial);
+        newSpatial.addControl(newControl);
+               
+        if ( newControl.getSpatial() != null ) {
+            for (Engine engine : newControl.engines) {
+                engine.attachTo((Node)newControl.getSpatial());
             }
         }
         /*
@@ -401,10 +471,11 @@ public class AbstractWeaponControl extends GhostControl implements XMLLoadable, 
         }
         */
         
+        logStuff("Original", originalControl);
+        logStuff("Clone", newControl);
         
-        
-        return control;
+        return newControl;
         
     }
-    
+  
 }

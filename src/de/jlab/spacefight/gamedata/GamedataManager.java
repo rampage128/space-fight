@@ -330,7 +330,8 @@ public class GamedataManager {
             StringBuilder code 	= new StringBuilder();
             boolean critical 	= false;
 
-            code.append("importClass(Packages.").append(SpaceAppState.class.getCanonicalName()).append(");");
+            code.append("load(\"nashorn:mozilla_compat.js\");\n");
+            code.append("importClass(Packages.").append(SpaceAppState.class.getCanonicalName()).append(");\n\n");
 
             while( reader.ready() ) {
                 String line = reader.readLine();

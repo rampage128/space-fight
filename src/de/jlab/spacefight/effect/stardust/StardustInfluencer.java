@@ -11,6 +11,7 @@ import com.jme3.export.JmeExporter;
 import com.jme3.export.JmeImporter;
 import com.jme3.math.Vector3f;
 import com.jme3.renderer.Camera;
+import com.jme3.util.clone.Cloner;
 import java.io.IOException;
 
 /**
@@ -138,6 +139,14 @@ public class StardustInfluencer implements ParticleInfluencer {
 
     public void read(JmeImporter im) throws IOException {
         
+    }
+
+    public Object jmeClone() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void cloneFields(Cloner cloner, Object original) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

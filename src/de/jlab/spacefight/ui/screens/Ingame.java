@@ -20,7 +20,7 @@ import de.jlab.spacefight.systems.perks.Perk;
 import de.jlab.spacefight.systems.perks.PerkControl;
 import de.jlab.spacefight.systems.weapons.WeaponSlot;
 import de.jlab.spacefight.systems.weapons.WeaponSystemControl;
-import de.jlab.spacefight.ui.controls.AdvancedList;
+
 import de.jlab.spacefight.ui.controls.lists.killlist.KillListModel;
 import de.jlab.spacefight.ui.controls.lists.scoreboard.ScoreboardModel;
 import de.jlab.spacefight.ui.controls.progressbar.ProgressBarControl;
@@ -39,10 +39,10 @@ import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.controls.Console;
 import de.lessvoid.nifty.controls.Label;
 import de.lessvoid.nifty.controls.ListBox;
-import de.lessvoid.nifty.controls.Slider;
 import de.lessvoid.nifty.elements.Element;
 import de.lessvoid.nifty.input.NiftyInputEvent;
 import de.lessvoid.nifty.input.NiftyInputMapping;
+import de.lessvoid.nifty.input.NiftyStandardInputEvent;
 import de.lessvoid.nifty.input.keyboard.KeyboardInputEvent;
 import de.lessvoid.nifty.screen.KeyInputHandler;
 import de.lessvoid.nifty.screen.Screen;
@@ -71,8 +71,8 @@ public class Ingame implements ScreenController, ActionListener, KillListener, N
     
     private int _command = 0;
     
-    private AdvancedList<ScoreboardModel> factionscoreboard;
-    private AdvancedList<ScoreboardModel> pilotscoreboard;
+    private ListBox<ScoreboardModel> factionscoreboard;
+    private ListBox<ScoreboardModel> pilotscoreboard;
     private ListBox<KillListModel> killlist;
     
     private ListBox<String> primaryWeaponList;
@@ -91,8 +91,8 @@ public class Ingame implements ScreenController, ActionListener, KillListener, N
         _nifty = nifty;
         this.screen = screen;
         
-        this.factionscoreboard = screen.findNiftyControl("factionscoreboard", AdvancedList.class);
-        this.pilotscoreboard = screen.findNiftyControl("pilotscoreboard", AdvancedList.class);
+        this.factionscoreboard = screen.findNiftyControl("factionscoreboard", ListBox.class);
+        this.pilotscoreboard = screen.findNiftyControl("pilotscoreboard", ListBox.class);
         this.killlist = screen.findNiftyControl("killlist", ListBox.class);
         
         this.primaryWeaponList = screen.findNiftyControl("primaryweaponlist", ListBox.class);
@@ -132,11 +132,11 @@ public class Ingame implements ScreenController, ActionListener, KillListener, N
             this.commandHandler.registerCvar(new DebugContextCvar(context, space));    
         }
         
-        Element layer = this.screen.findElementByName("consolelayer");
+        Element layer = this.screen.findElementById("consolelayer");
         layer.hideWithoutEffect();
         this.commandHandler.getConsole().setEnabled(false);
         
-        layer = this.screen.findElementByName("scoreboardlayer");
+        layer = this.screen.findElementById("scoreboardlayer");
         layer.hideWithoutEffect();
     }
 
@@ -172,6 +172,8 @@ public class Ingame implements ScreenController, ActionListener, KillListener, N
             }
         } else if ("SCOREBOARD".equalsIgnoreCase(name)) {
             toggleScoreboard(isPressed);
+        } else if ("STATS".equalsIgnoreCase(name)) {
+            Game.get().setDisplayStatView(isPressed);
         }
     }
     
@@ -363,19 +365,19 @@ public class Ingame implements ScreenController, ActionListener, KillListener, N
     public NiftyInputEvent convert(KeyboardInputEvent inputEvent) {
         if (inputEvent.getKey() == KeyboardInputEvent.KEY_TAB) { // or whatever PHYSICAL event you need ...
             if (inputEvent.isKeyDown()) {
-                return NiftyInputEvent.NextInputElement; // this is the LOGICAL event
+                return NiftyStandardInputEvent.NextInputElement; // this is the LOGICAL event
             } else {
-                return NiftyInputEvent.PrevInputElement;
+                return NiftyStandardInputEvent.PrevInputElement;
             }
         }
         return null;
     }
 
     public boolean keyEvent(NiftyInputEvent inputEvent) {
-        if (NiftyInputEvent.NextInputElement.equals(inputEvent)) {
+        if (NiftyStandardInputEvent.NextInputElement.equals(inputEvent)) {
             this.toggleScoreboard(true);
             return true;
-        } else if (NiftyInputEvent.PrevInputElement.equals(inputEvent)) {
+        } else if (NiftyStandardInputEvent.PrevInputElement.equals(inputEvent)) {
             this.toggleScoreboard(false);
             return true;
         }

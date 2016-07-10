@@ -132,6 +132,7 @@ public class ShieldControl extends AbstractControl implements SystemControl, XML
         
     }
 
+    @Override
     public Control cloneForSpatial(Spatial spatial) {
         ShieldControl control = new ShieldControl(this.space);
         control.setShieldStrength(shieldStrength);
@@ -188,12 +189,12 @@ public class ShieldControl extends AbstractControl implements SystemControl, XML
         this.forceShieldControl = new ForceShieldControl(this.shieldMaterial);
  
         // Set a texture to the shield
-        //this.forceShieldControl.setTexture(this.assetManager.loadTexture("TestTextures/ForceShield/fs_texture.png"));
+        //this.forceShieldControl.setTexture(Game.get().getAssetManager().loadTexture("effects/shieldblast/energy.png"));
     }
     
     public void setShieldColor(ColorRGBA color) {
         if (color != null) {
-            this.shieldColor.set(color.getRed(), color.getGreen(), color.getBlue(), 3);
+            this.shieldColor.set(color.getRed(), color.getGreen(), color.getBlue(), 0.5f);
             this.forceShieldControl.setColor(this.shieldColor); // Set effect color
             this.forceShieldControl.setEffectSize(0.25f);
         }

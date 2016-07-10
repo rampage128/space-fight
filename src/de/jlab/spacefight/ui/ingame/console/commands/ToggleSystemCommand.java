@@ -51,7 +51,7 @@ public class ToggleSystemCommand extends ExternalConsoleCommand {
         
         if (target != null) {
             String systemName = null;
-            if (args.length > 0) {
+            if (args.length > 1) {
                 systemName = args[1];
             }
             

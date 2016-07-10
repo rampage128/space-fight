@@ -22,15 +22,18 @@ import com.jme3.scene.debug.Grid;
 import de.jlab.spacefight.Game;
 
 import de.lessvoid.nifty.Nifty;
+import de.lessvoid.nifty.NiftyEvent;
 import de.lessvoid.nifty.NiftyEventAnnotationProcessor;
 import de.lessvoid.nifty.NiftyEventSubscriber;
 import de.lessvoid.nifty.controls.TreeBox;
 import de.lessvoid.nifty.controls.TreeItem;
-import de.lessvoid.nifty.controls.TreeItemSelectedEvent;
+import de.lessvoid.nifty.controls.TreeItemSelectionChangedEvent;
+
 import de.lessvoid.nifty.render.NiftyImage;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
 import java.util.List;
+import java.util.function.Supplier;
 import java.util.logging.Logger;
 
 /**
@@ -174,7 +177,8 @@ public class EditorController implements ScreenController {
         if ( userObject instanceof Control )
             itemImage = _controlImage;
         
-        TreeItem<Object> item = new TreeItem<Object>(parent, userObject, userObject.getName(), itemImage, itemImage);
+        TreeItem<Object> item = new TreeItem<Object>(userObject); // parent, userObject, userObject.getName(), itemImage, itemImage
+        item.setParentItem(parent);
         //node.setValue(userObject);
         //node.setDisplayCaption(userObject.toString());
         
@@ -200,9 +204,12 @@ public class EditorController implements ScreenController {
      * When the selection of the ListBox changes this method is called.
      */
     @NiftyEventSubscriber(id="shiptree")
-    public void onShiptreeTreeItemSelectedEvent(final String id, final TreeItemSelectedEvent event) {
-        TreeItem<Object> selection = event.getTreeItem();
-        LOGGER.warning(selection.getDisplayCaption());
+    public void onShiptreeTreeItemSelectedEvent(final String id, final TreeItemSelectionChangedEvent event) {
+        List selection = event.getSelection();
+        if (!selection.isEmpty()) {
+            TreeItem item = (TreeItem)selection.get(0);
+            LOGGER.warning(((Spatial)item.getValue()).getName());
+        }
     }
         
     public void quitEditor() {

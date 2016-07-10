@@ -29,17 +29,17 @@ public class KillListViewConverter implements ListBoxViewConverter<KillListModel
      */
     @Override
     public final void display(final Element listBoxItem, final KillListModel item) {
-        final Element originText = listBoxItem.findElementByName(KILL_LINE_ORIGIN);
+        final Element originText = listBoxItem.findElementById(KILL_LINE_ORIGIN);
         final TextRenderer originTextRenderer = originText.getRenderer(TextRenderer.class);
         //int originWidth = ((originTextRenderer.getFont() == null) ? 0 : originTextRenderer.getFont().getWidth(item.getOrigin()));
         //originText.setWidth(originWidth);
         
-        final Element damageText = listBoxItem.findElementByName(KILL_LINE_DAMAGE);
+        final Element damageText = listBoxItem.findElementById(KILL_LINE_DAMAGE);
         final TextRenderer damageTextRenderer = damageText.getRenderer(TextRenderer.class);
         //int damageWidth = ((damageTextRenderer.getFont() == null) ? 0 : damageTextRenderer.getFont().getWidth(item.getDamage()));
         //damageText.setWidth(damageWidth);
         
-        final Element targetText = listBoxItem.findElementByName(KILL_LINE_TARGET);
+        final Element targetText = listBoxItem.findElementById(KILL_LINE_TARGET);
         final TextRenderer targetTextRenderer = targetText.getRenderer(TextRenderer.class);
         //int targetWidth = ((targetTextRenderer.getFont() == null) ? 0 : targetTextRenderer.getFont().getWidth(item.getTarget()));
         //targetText.setWidth(targetWidth);
@@ -62,17 +62,17 @@ public class KillListViewConverter implements ListBoxViewConverter<KillListModel
      */
     @Override
     public final int getWidth(final Element listBoxItem, final KillListModel item) {
-        final Element originText = listBoxItem.findElementByName(KILL_LINE_ORIGIN);
+        final Element originText = listBoxItem.findElementById(KILL_LINE_ORIGIN);
         final TextRenderer originTextRenderer = originText.getRenderer(TextRenderer.class);
         int originWidth = ((originTextRenderer.getFont() == null) ? 0 : originTextRenderer.getFont().getWidth(item.getOrigin()));
         //originText.setWidth(originWidth);
         
-        final Element damageText = listBoxItem.findElementByName(KILL_LINE_DAMAGE);
+        final Element damageText = listBoxItem.findElementById(KILL_LINE_DAMAGE);
         final TextRenderer damageTextRenderer = damageText.getRenderer(TextRenderer.class);
         int damageWidth = ((damageTextRenderer.getFont() == null) ? 0 : damageTextRenderer.getFont().getWidth(item.getDamage()));
         //damageText.setWidth(damageWidth);
         
-        final Element targetText = listBoxItem.findElementByName(KILL_LINE_TARGET);
+        final Element targetText = listBoxItem.findElementById(KILL_LINE_TARGET);
         final TextRenderer targetTextRenderer = targetText.getRenderer(TextRenderer.class);
         int targetWidth = ((targetTextRenderer.getFont() == null) ? 0 : targetTextRenderer.getFont().getWidth(item.getTarget()));
         //targetText.setWidth(targetWidth);

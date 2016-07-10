@@ -23,6 +23,10 @@ public final class KillListModel {
     }
 
     public Color getOriginColor() {
+        if (this.kill.getOrigin() == null) {
+            return Color.WHITE;
+        }
+                
         ObjectInfoControl client = Game.get().getPlayer().getClient();
         if (this.kill.getOrigin().getFaction() == null || client == null) {
             return Color.WHITE;
@@ -36,7 +40,9 @@ public final class KillListModel {
     }
     
     public String getOrigin() {
-        if (kill.getOrigin().getPlayer() != null) {
+        if (kill.getOrigin() == null) {
+            return "unknown";
+        } else if (kill.getOrigin().getPlayer() != null) {
             return kill.getOrigin().getPlayer().getNickname();
         } else if (kill.getOrigin().getCallsign() != null) {
             return kill.getOrigin().getCallsign();

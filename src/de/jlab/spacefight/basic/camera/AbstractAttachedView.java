@@ -96,7 +96,7 @@ public abstract class AbstractAttachedView implements View {
             
             if (this.linearInertia > 0) {
                 this.lerp = tpf / (this.linearInertia / 10);
-                this.cameraNode.setLocalTranslation(this.camPosition.interpolate(this.camPosition, this.camMoveTo, this.lerp));
+                this.cameraNode.setLocalTranslation(this.camPosition.interpolateLocal(this.camPosition, this.camMoveTo, this.lerp));
             } else {
                 this.cameraNode.setLocalTranslation(this.camMoveTo);
             }

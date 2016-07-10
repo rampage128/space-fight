@@ -13,10 +13,11 @@ import de.jlab.spacefight.mission.structures.Faction;
 import de.jlab.spacefight.mission.structures.Kill;
 import de.jlab.spacefight.player.PlayerControl;
 import de.jlab.spacefight.ui.TabController;
-import de.jlab.spacefight.ui.controls.AdvancedList;
+
 import de.jlab.spacefight.ui.controls.lists.scoreboard.ScoreboardModel;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.controls.Label;
+import de.lessvoid.nifty.controls.ListBox;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
 import de.lessvoid.nifty.tools.Color;
@@ -39,9 +40,9 @@ public class EndGame implements ScreenController {
     private int command = -1;
     
     private TabController tabs;
-    private AdvancedList<ScoreboardModel> factionscoreboard;
-    private AdvancedList<ScoreboardModel> pilotscoreboard;
-    private AdvancedList<String> piloteventlog;
+    private ListBox<ScoreboardModel> factionscoreboard;
+    private ListBox<ScoreboardModel> pilotscoreboard;
+    private ListBox<String> piloteventlog;
     
     public void bind(Nifty nifty, Screen screen) {
         this.nifty  = nifty;
@@ -51,9 +52,9 @@ public class EndGame implements ScreenController {
         this.tabs.addTab("button_scoreboard", "tab_scoreboard");
         this.tabs.addTab("button_pilot", "tab_pilot");
         
-        this.factionscoreboard = screen.findNiftyControl("factionscoreboard", AdvancedList.class);
-        this.pilotscoreboard = screen.findNiftyControl("pilotscoreboard", AdvancedList.class);
-        this.piloteventlog = screen.findNiftyControl("piloteventlog", AdvancedList.class);
+        this.factionscoreboard = screen.findNiftyControl("factionscoreboard", ListBox.class);
+        this.pilotscoreboard = screen.findNiftyControl("pilotscoreboard", ListBox.class);
+        this.piloteventlog = screen.findNiftyControl("piloteventlog", ListBox.class);
     }
 
     public void onStartScreen() {

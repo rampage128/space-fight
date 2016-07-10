@@ -448,12 +448,15 @@ public class SpaceAppState extends AbstractAppState {
     private PhysicsCollisionListener collisionChecker = new PhysicsCollisionListener() {
 
         public void collision(PhysicsCollisionEvent event) {
+            if (event.getNodeA() == null) {
+                System.out.println("x");
+            }
             DamageControl damageControlA = event.getNodeA().getControl(DamageControl.class);
             
             if (damageControlA != null) {
                 // CHECK WEAPON COLLISIONS
                 AbstractWeaponControl weaponB = event.getNodeB().getControl(AbstractWeaponControl.class);
-                if (weaponB != null && weaponB.getOrigin().getSpatial() != event.getNodeA()) {
+                if (weaponB != null && (weaponB.getOrigin() == null || weaponB.getOrigin().getSpatial() != event.getNodeA())) {
                     weaponB.collide(event.getNodeA().getControl(ObjectInfoControl.class), event);
                     return;
                 }

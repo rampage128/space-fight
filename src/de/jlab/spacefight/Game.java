@@ -1,8 +1,11 @@
 package de.jlab.spacefight;
 
-import de.jlab.spacefight.debug.SpaceDebugger;
+import com.jme3.app.FlyCamAppState;
 import com.jme3.app.SimpleApplication;
+import de.jlab.spacefight.debug.SpaceDebugger;
 import com.jme3.asset.plugins.FileLocator;
+import com.jme3.input.KeyInput;
+import com.jme3.input.controls.KeyTrigger;
 import com.jme3.renderer.RenderManager;
 import de.jlab.spacefight.audio.AudioManager;
 import de.jlab.spacefight.basic.VersionInfo;
@@ -23,7 +26,7 @@ import java.util.logging.Logger;
  * 
  * @author rampage
  */
-public class Game extends AdvancedSimpleApplication {
+public class Game extends SimpleApplication {
     
     /* VOID MAIN */
     public static void main(String[] args) {      
@@ -75,6 +78,12 @@ public class Game extends AdvancedSimpleApplication {
         
     @Override
     public void simpleInitApp() {
+        
+        // GET RID OF DEFAULT SHIT
+        stateManager.detach(stateManager.getState(FlyCamAppState.class));
+        inputManager.deleteTrigger(INPUT_MAPPING_EXIT, new KeyTrigger(KeyInput.KEY_ESCAPE));
+        inputManager.deleteTrigger(INPUT_MAPPING_HIDE_STATS, new KeyTrigger(KeyInput.KEY_F5));
+        
         // FILL SINGLETON INSTANCE
         INSTANCE = this;
         // LOCATOR FOR CURRENT MOD FILES
@@ -125,13 +134,9 @@ public class Game extends AdvancedSimpleApplication {
     public void simpleUpdate(float tpf) {
         // MOVED TO AUDIOCONTROL TRYING TO PREVENT AUDIO "FLICKERING" IN ENGINE SOUND!
         //_audioManager.update();
-    }
-    
-    @Override
-    public void postUpdate(float tpf) {
         this.cameraManager.update(tpf);
     }
-
+    
     @Override
     public void simpleRender(RenderManager rm) {
         //System.out.println("-----------------------");
@@ -150,6 +155,7 @@ public class Game extends AdvancedSimpleApplication {
         NetworkAppState.leave(this);
         SpaceAppState.leaveSpace(this);
         this.stop();
+        System.exit(0);
     }
     
     /* GETTERS AND SETTERS */

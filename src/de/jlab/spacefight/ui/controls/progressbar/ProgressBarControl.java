@@ -6,13 +6,12 @@ package de.jlab.spacefight.ui.controls.progressbar;
 
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.controls.Controller;
+import de.lessvoid.nifty.controls.Parameters;
 import de.lessvoid.nifty.elements.Element;
 import de.lessvoid.nifty.elements.render.TextRenderer;
 import de.lessvoid.nifty.input.NiftyInputEvent;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.tools.SizeValue;
-import de.lessvoid.xml.xpp3.Attributes;
-import java.util.Properties;
 
 /**
  *
@@ -48,12 +47,12 @@ public class ProgressBarControl implements Controller {
         progressTextElement.getRenderer(TextRenderer.class).setText(progressText);
     }
 
-    public void bind(Nifty nifty, Screen screen, Element element, Properties parameter, Attributes controlDefinitionAttributes) {
-        progressBarElement = element.findElementByName("progress");
-        progressTextElement = element.findElementByName("progress-text");
+    public void bind(Nifty nifty, Screen screen, Element element, Parameters parameter) {
+        progressBarElement = element.findElementById("progress");
+        progressTextElement = element.findElementById("progress-text");
     }
 
-    public void init(Properties parameter, Attributes controlDefinitionAttributes) {
+    public void init(Parameters parameter) {
         
     }
 }

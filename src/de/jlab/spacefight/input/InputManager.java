@@ -122,8 +122,9 @@ public final class InputManager {
         
         // GAME BINDINGS
         this.config.setValue(GameInput.MENU.toString(), "KEY_ESCAPE");
-        this.config.setValue(GameInput.CONSOLE.toString(), "KEY_APOSTROPHE");
+        this.config.setValue(GameInput.CONSOLE.toString(), "KEY_RBRACKET");
         this.config.setValue(GameInput.SCOREBOARD.toString(), "KEY_TAB");
+        this.config.setValue(GameInput.STATS.toString(), "KEY_LBRACKET");
     }
     
     /**
