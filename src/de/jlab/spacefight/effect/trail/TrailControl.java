@@ -41,7 +41,9 @@ this.line = line;
 @Override
 public void setSpatial(Spatial spatial){
 super.setSpatial(spatial);
+if (spatial != null) {
 lastSpawnPos = spatial.getWorldTranslation().clone();
+}
 }
 
 @Override
