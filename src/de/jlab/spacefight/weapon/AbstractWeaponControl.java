@@ -186,18 +186,7 @@ public class AbstractWeaponControl extends GhostControl implements XMLLoadable, 
         control.setSpatial(this.spatial);
         return control;
     }
-        
-    private void logStuff(String caller, AbstractWeaponControl control) {
-        System.out.println(caller + ": " + control + " [" + control.getSpatial() + " / " + control.getObjectId() + "]");
-        StringBuilder stackBuilder = new StringBuilder();
-        StackTraceElement[] stackElements = Thread.currentThread().getStackTrace();
-        for (StackTraceElement stackElement : stackElements) {
-            stackBuilder.append(stackElement.getClassName()).append(".").append(stackElement.getMethodName()).append(" <- ");
-        }
-        System.out.println(stackBuilder.toString());
-        System.out.println("----------------------");
-    }  
-        
+              
     //public abstract void updateWeapon(float tpf);
     //public abstract void onDestroy();
            
@@ -470,10 +459,7 @@ public class AbstractWeaponControl extends GhostControl implements XMLLoadable, 
             }
         }
         */
-        
-        logStuff("Original", originalControl);
-        logStuff("Clone", newControl);
-        
+               
         return newControl;
         
     }
