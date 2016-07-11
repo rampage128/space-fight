@@ -695,11 +695,11 @@ public final class ObjectInfoControl extends AbstractControl implements XMLLoada
             //computeCollision(getSpatial(), XMLLoader.getStringValue(element, "shape", "custom"), physics);
             if ("bomber".equalsIgnoreCase(shipType)) {
                 damage.setHullHP(800f);
-                flight.setAcceleration(20f);
+                //flight.setAcceleration(20f);
                 flight.setTopspeed(100f);
                 flight.setTopspeedReverse(20f);
                 flight.setTurnrate(200f);
-                flight.setMomentum(110f);
+                //flight.setMomentum(110f);
                 //flight.setAngulardamp(4f);
                 //flight.setLineardamp(20f);
                 physics.setMass(10000f);
@@ -710,11 +710,11 @@ public final class ObjectInfoControl extends AbstractControl implements XMLLoada
                 weapons.setMaxSecondarySize(10);
             } else if ("interceptor".equalsIgnoreCase(shipType)) {
                 damage.setHullHP(300f);
-                flight.setAcceleration(30f);
+                //flight.setAcceleration(30f);
                 flight.setTopspeed(160f);
                 flight.setTopspeedReverse(20f);
                 flight.setTurnrate(270f); // 4f
-                flight.setMomentum(180f); // 8f
+                //flight.setMomentum(180f); // 8f
                 //flight.setAngulardamp(6f);
                 //flight.setLineardamp(50f);
                 physics.setMass(6000f);
@@ -725,11 +725,11 @@ public final class ObjectInfoControl extends AbstractControl implements XMLLoada
                 weapons.setMaxSecondarySize(4);
             } else {
                 damage.setHullHP(500f);
-                flight.setAcceleration(25f);
+                //flight.setAcceleration(25f);
                 flight.setTopspeed(130f);
                 flight.setTopspeedReverse(20f);
                 flight.setTurnrate(230f);
-                flight.setMomentum(170f);
+                //flight.setMomentum(170f);
                 //flight.setAngulardamp(5f);
                 //flight.setLineardamp(30f);
                 physics.setMass(8000f);
